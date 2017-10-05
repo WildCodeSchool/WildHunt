@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.indianacroft.wildhunt.MainActivity">
+    tools:context="fr.indianacroft.wildhunt.MainActivity"
+    android:background="@drawable/wood_background3" >
 
     <Button
         android:id="@+id/butPlay"
         android:layout_width="173dp"
         android:layout_height="102dp"
         android:text="PLAY"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_shape"
+        app:layout_constraintBottom_toTopOf="@+id/buttonInscriptionSignIn"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -19,11 +22,13 @@
         tools:layout_editor_absoluteX="65dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonInscriptionSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOG IN"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_shape"
+        app:layout_constraintBottom_toTopOf="@+id/buttonConnexionPlay"
         app:layout_constraintTop_toBottomOf="@+id/butPlay"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -33,17 +38,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SIGN IN"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_shape"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInscriptionSignIn"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.506" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="245dp"
-        android:layout_height="192dp"
-        app:srcCompat="@android:drawable/dialog_holo_light_frame"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/pirate2"
         app:layout_constraintBottom_toTopOf="@+id/butPlay"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"

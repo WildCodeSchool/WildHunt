@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.indianacroft.wildhunt">
 
+    <!--<uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,22 +14,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConnexionActivity">
+        <activity
+            android:name=".ConnexionActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity  android:name=".InscriptionActivity" > </activity>
         <activity
-            android:name=".Tab_Activity"
+            android:name=".HomeGameMaster"
             android:label="@string/title_activity_tab_"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".Tab_HomeJoueur"
+            android:name=".ChallengesActivity"
+            android:label="@string/title_activity_challenges_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HomeJoueur"
             android:label="Home Joueur"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InscriptionActivity"
+            android:label="Inscription"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Rules"
+            android:label="Rules"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -1,12 +1,55 @@
 <resources>
+    // Activities
     <string name="app_name">WildHunt</string>
     <string name="title_activity_tab_">Tab_Activity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_challenges_">Challenges_Activity</string>
+    <string name="title_activity_profile_">Profile</string>
+
+    // Spinners
     <string-array name="life_duration">
-        <item>Short (1 day)</item>
-        <item>Normal (3 days)</item>
+        <item>Short (3 days)</item>
         <item>Medium (5 days)</item>
         <item>Long (7 days)</item>
     </string-array>
+    <string-array name="challenge_difficulty">
+        <item>Easy - 30 pts</item>
+        <item>Normal 50 pts</item>
+        <item>Hard - 100 pts</item>
+    </string-array>
+
+    // Navigation Drawer
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_home">Acceuil</string>
+    <string name="nav_rules">Règles du jeu</string>
+    <string name="nav_profile">Mon profil</string>
+    <string name="nav_camera">Appareil photo</string>
+    <string name="nav_quests">Mes parties</string>
+    <string name="nav_switch">Switch Maître du jeu / joueur</string>
+    <string name="nav_delete">Deconnexion</string>
+
+    // Page Profil
+    <string name="profil">PROFIL</string>
+    <string name="upload_ta_photo">UPLOAD\nPHOTO</string>
+    <string name="prendre_nouvelle_photo">NOUVELLE\nPHOTO</string>
+
+    // Page Challenge
+    <string name="challenge_creation">CREATION DE\nCHALLENGE</string>
+    <string name="hint_name">Ajoutez un indice pour aider le joueur à résoudre le challenge : </string>
+    <string name="challenge_name">Nom de challenge : </string>
+    <string name="hint_challenge_name">Ajoutez ici votre nom de challenge</string>
+    <string name="difficulty">Choisissez votre difficulté : </string>
+    <string name="hint">Ecrivez ici votre indice</string>
+    <string name="create_challenge">Créer le challenge</string>
+    <string name="toast_challenge">Merci de remplir tous les champs\npr pouvoir créer le challenge</string>
+
+    // Page Lobby
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="lobby_create_party">Créer ta propre Quête !</string>
+    <string name="lobby_list_quest">Liste des Quêtes</string>
+
 </resources>

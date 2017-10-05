@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="fr.indianacroft.wildhunt.HomeGameMaster">
+
+    <TextView
+        android:id="@+id/name_quest_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quest Name"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/name_quest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Add quest name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/name_quest_title" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/name_quest"
+        android:layout_marginTop="22dp"
+        android:text="Description"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Describe your quest"
+        android:maxLength="200"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/life_duration_quest_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Life Duration"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/name_quest"
+        android:layout_toEndOf="@+id/name_quest" />
+
+    <Spinner
+        android:id="@+id/spinner_challenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/editText3"
+        android:layout_toEndOf="@+id/editText3"
+        android:layout_below="@+id/life_duration_quest_title"
+        android:layout_alignBottom="@+id/name_quest" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Create Quest"
+        android:layout_below="@+id/butAddNewChallenge"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_shape"/>
+
+    <Button
+        android:id="@+id/butAddNewChallenge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/butNewChallenge2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/butNewChallenge2"
+        android:layout_below="@+id/butNewChallenge2"
+        android:layout_marginTop="15dp"
+        android:text="Add new Challenge"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_shape"/>
+
+    <Button
+        android:id="@+id/butNewChallenge2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/butNewChallenge"
+        android:layout_alignRight="@+id/butNewChallenge"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/butNewChallenge"
+        android:layout_marginTop="13dp"
+        android:text="Create Challenge 2"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_shape"/>
+
+    <Button
+        android:id="@+id/butNewChallenge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:text="Create Challenge 1"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_shape"
+        android:layout_below="@+id/editText3"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/imageViewCancel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/butAddNewChallenge"
+        android:layout_alignTop="@+id/butNewChallenge2"
+        android:layout_alignStart="@+id/imageViewCancel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/cancel"/>
+
+    <ImageView
+        android:id="@+id/imageViewCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/butNewChallenge2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/butNewChallenge"
+        android:layout_toEndOf="@+id/life_duration_quest_title"
+        android:layout_toRightOf="@+id/life_duration_quest_title"
+        app:srcCompat="@drawable/cancel" />
+
+    <ImageView
+        android:id="@+id/imageAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageViewCancel2"
+        android:layout_alignStart="@+id/imageViewCancel2"
+        android:layout_alignTop="@+id/butAddNewChallenge"
+        android:layout_above="@+id/button"
+        app:srcCompat="@drawable/add" />
+
+</RelativeLayout>

@@ -1,6 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/wood_background3"
+    tools:layout_editor_absoluteY="25dp"
+    tools:layout_editor_absoluteX="0dp">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textViewConnexionWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="Welcome to the Wild Hunt"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewConnexionLogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewConnexionLogo"
+        android:layout_width="240dp"
+        android:layout_height="171dp"
+        app:srcCompat="@drawable/pirate2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonConnexionPlay"
+        app:layout_constraintTop_toBottomOf="@+id/textViewConnexionWelcome" />
+
+    <Button
+        android:id="@+id/buttonConnexionPlay"
+        android:layout_width="161dp"
+        android:layout_height="91dp"
+        android:fontFamily="casual"
+        android:text="PLAY"
+        android:background="@drawable/button_shape"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextConnexionPseudo"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewConnexionLogo" />
+
+    <EditText
+        android:id="@+id/editTextConnexionPseudo"
+        android:layout_width="232dp"
+        android:layout_height="46dp"
+        android:hint="Please enter your email"
+        android:gravity="center"
+        android:fontFamily="casual"
+        android:textColorHint="#000000"
+        android:textStyle="italic"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextConnexionPassword"
+        app:layout_constraintTop_toBottomOf="@+id/buttonConnexionPlay" />
+
+    <EditText
+        android:id="@+id/editTextConnexionPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Please enter your password"
+        android:gravity="center"
+        android:fontFamily="casual"
+        android:textColorHint="#000000"
+        android:textStyle="italic"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonConnexionLogIn"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConnexionPseudo" />
+
+    <Button
+        android:id="@+id/buttonConnexionLogIn"
+        android:layout_width="118dp"
+        android:layout_height="48dp"
+        android:text="LOG IN"
+        android:fontFamily="casual"
+        android:background="@drawable/button_shape"
+        android:textColor="#FFFFFF"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonConnexionSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConnexionPassword" />
+
+    <Button
+        android:id="@+id/buttonConnexionSignIn"
+        android:layout_width="122dp"
+        android:layout_height="48dp"
+        android:fontFamily="casual"
+        android:text="SIGN IN"
+        android:background="@drawable/button_shape"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonConnexionLogIn" />
+</android.support.constraint.ConstraintLayout>

@@ -26,15 +26,15 @@ public class MainActivity extends AppCompatActivity {
         butPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Tab_HomeJoueur.class);
+                Intent intent = new Intent(MainActivity.this, HomeJoueur.class);
                 startActivity(intent);
             }
         });//Button Play
-        but2 = (Button) findViewById(R.id.button2);
+        but2 = (Button) findViewById(R.id.buttonInscriptionSignIn);
         but2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Tab_Activity.class);
+                Intent intent = new Intent(MainActivity.this, HomeGameMaster.class);
                 startActivity(intent);
             }
         });
