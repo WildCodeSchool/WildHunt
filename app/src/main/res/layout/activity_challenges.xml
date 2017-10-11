@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:background="@drawable/backgroundtest2">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,18 +18,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="fr.indianacroft.wildhunt.ChallengesActivity"
-        android:background="@drawable/wood_background3">
+        tools:context="fr.indianacroft.wildhunt.ChallengesActivity">
 
         <android.support.design.widget.AppBarLayout
+            style="@style/MainTitle"
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/appbar_padding_top"
             android:description="@style/AppTheme.AppBarOverlay"
-            android:background="@android:color/transparent"
             tools:layout_editor_absoluteY="25dp"
-            tools:layout_editor_absoluteX="8dp">
+            tools:layout_editor_absoluteX="8dp"
+            android:background="@drawable/bars_colors">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -68,24 +69,13 @@
             tools:layout_editor_absoluteY="64dp"
             tools:layout_editor_absoluteX="0dp">
 
-            <TextView
-                android:layout_width="363dp"
-                android:layout_height="22dp"
-                android:text="@string/challenge_name"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:id="@+id/name_challenge_title"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/name_challenge"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <EditText
-                android:id="@+id/name_challenge"
+                android:id="@+id/challenge_name"
                 android:layout_width="368dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:background="@drawable/button_shape2"
                 android:hint="@string/hint_challenge_name"
                 android:gravity="center"
                 android:layout_alignParentLeft="true"
@@ -93,17 +83,17 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/imageViewInscriptionLogo"
-                app:layout_constraintTop_toBottomOf="@+id/name_challenge_title" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewInscriptionLogo"
-                android:layout_width="257dp"
-                android:layout_height="230dp"
-                app:srcCompat="@android:drawable/checkbox_off_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/camera"
                 app:layout_constraintRight_toLeftOf="@+id/butLoad"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/name_challenge" />
+                app:layout_constraintTop_toBottomOf="@+id/challenge_name" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -114,46 +104,31 @@
                 android:textStyle="bold"
                 app:layout_constraintRight_toLeftOf="@+id/spinner_challenge"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/hint_challenge_title"
+                app:layout_constraintBottom_toTopOf="@+id/hint_challenge"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewInscriptionLogo" />
 
             <Spinner
                 android:id="@+id/spinner_challenge"
                 android:layout_width="152dp"
                 android:layout_height="24dp"
-                android:layout_alignBottom="@+id/editText3"
-                android:layout_toRightOf="@+id/editText3"
-                android:layout_toEndOf="@+id/editText3"
-                android:layout_below="@+id/life_duration_quest_title"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/textView5"
-                app:layout_constraintBottom_toTopOf="@+id/hint_challenge_title"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewInscriptionLogo" />
-
-            <TextView
-                android:id="@+id/hint_challenge_title"
-                android:layout_width="344dp"
-                android:layout_height="wrap_content"
-                android:text="@string/hint_name"
-                android:textStyle="bold"
-                android:gravity="center"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/hint_challenge"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewInscriptionLogo" />
 
             <EditText
                 android:id="@+id/hint_challenge"
-                android:layout_width="358dp"
-                android:layout_height="50dp"
+                android:layout_width="356dp"
+                android:layout_height="102dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="@string/hint"
+                android:background="@drawable/button_shape2"
+                android:hint="@string/hint_name"
                 android:gravity="center"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/butCreateChallenge"
-                app:layout_constraintTop_toBottomOf="@+id/hint_challenge_title" />
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <Button
                 android:id="@+id/butCreateChallenge"
@@ -175,7 +150,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageViewInscriptionLogo"
                 app:layout_constraintBottom_toTopOf="@+id/butUpload"
-                app:layout_constraintTop_toBottomOf="@+id/name_challenge" />
+                app:layout_constraintTop_toBottomOf="@+id/challenge_name" />
 
             <Button
                 android:id="@+id/butUpload"
@@ -191,7 +166,14 @@
 
     </LinearLayout>
 
-
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
 

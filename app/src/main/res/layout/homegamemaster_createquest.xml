@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,151 +7,106 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="fr.indianacroft.wildhunt.HomeGameMaster">
-
-    <TextView
-        android:id="@+id/name_quest_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quest Name"
-        android:textStyle="bold" />
+    tools:context="fr.indianacroft.wildhunt.HomeGameMasterActivity">
 
     <EditText
         android:id="@+id/name_quest"
-        android:layout_width="wrap_content"
+        android:layout_width="329dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Add quest name"
+        android:gravity="center"
+        android:hint="@string/hint_quest_name"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/name_quest_title" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/name_quest"
-        android:layout_marginTop="22dp"
-        android:text="Description"
-        android:textStyle="bold" />
+        android:background="@drawable/button_shape2"
+        android:layout_below="@+id/playerActivityNameQuestTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/life_duration_quest_title"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/description_quest"
+        android:layout_width="326dp"
+        android:layout_height="107dp"
         android:ems="10"
+        android:background="@drawable/button_shape2"
         android:inputType="textPersonName"
-        android:hint="Describe your quest"
+        android:gravity="center"
+        android:hint="@string/hint_quest_description"
         android:maxLength="200"
-        android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/butAddNewChallenge"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_challenge" />
 
     <TextView
         android:id="@+id/life_duration_quest_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Life Duration"
+        android:layout_width="200dp"
+        android:layout_height="23dp"
+        android:text="@string/life_duration_quest_title"
         android:textStyle="bold"
+        android:gravity="center"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/name_quest"
-        android:layout_toEndOf="@+id/name_quest" />
+        android:layout_toEndOf="@+id/name_quest"
+        app:layout_constraintRight_toLeftOf="@+id/spinner_challenge"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/description_quest"
+        app:layout_constraintTop_toBottomOf="@+id/name_quest" />
 
     <Spinner
         android:id="@+id/spinner_challenge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/editText3"
-        android:layout_toEndOf="@+id/editText3"
-        android:layout_below="@+id/life_duration_quest_title"
-        android:layout_alignBottom="@+id/name_quest" />
-
-    <Button
-        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Create Quest"
+        android:layout_toEndOf="@+id/name_quest"
+        android:layout_below="@+id/life_duration_quest_title"
+        android:layout_alignBottom="@+id/name_quest"
+        android:layout_toRightOf="@+id/name_quest"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/life_duration_quest_title"
+        app:layout_constraintBottom_toTopOf="@+id/description_quest"
+        app:layout_constraintTop_toBottomOf="@+id/name_quest" />
+
+    <Button
+        android:id="@+id/button_create_quest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_quest_button"
         android:layout_below="@+id/butAddNewChallenge"
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        android:background="@drawable/button_shape"/>
+        android:background="@drawable/button_shape"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
     <Button
         android:id="@+id/butAddNewChallenge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/butNewChallenge2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/butNewChallenge2"
-        android:layout_below="@+id/butNewChallenge2"
-        android:layout_marginTop="15dp"
-        android:text="Add new Challenge"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/button_shape"/>
-
-    <Button
-        android:id="@+id/butNewChallenge2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/butNewChallenge"
-        android:layout_alignRight="@+id/butNewChallenge"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/butNewChallenge"
-        android:layout_marginTop="13dp"
-        android:text="Create Challenge 2"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/button_shape"/>
-
-    <Button
-        android:id="@+id/butNewChallenge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
-        android:text="Create Challenge 1"
+        android:text="@string/add_new_challenge"
         android:textColor="#FFFFFF"
         android:background="@drawable/button_shape"
-        android:layout_below="@+id/editText3"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/description_quest" />
 
-    <ImageView
-        android:id="@+id/imageViewCancel2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/butAddNewChallenge"
-        android:layout_alignTop="@+id/butNewChallenge2"
-        android:layout_alignStart="@+id/imageViewCancel"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        app:srcCompat="@drawable/cancel"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="328dp"
+        android:layout_height="155dp"
+        android:background="@drawable/button_shape2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/button_create_quest"
+        app:layout_constraintTop_toBottomOf="@+id/butAddNewChallenge" />
 
-    <ImageView
-        android:id="@+id/imageViewCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/butNewChallenge2"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/butNewChallenge"
-        android:layout_toEndOf="@+id/life_duration_quest_title"
-        android:layout_toRightOf="@+id/life_duration_quest_title"
-        app:srcCompat="@drawable/cancel" />
-
-    <ImageView
-        android:id="@+id/imageAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageViewCancel2"
-        android:layout_alignStart="@+id/imageViewCancel2"
-        android:layout_alignTop="@+id/butAddNewChallenge"
-        android:layout_above="@+id/button"
-        app:srcCompat="@drawable/add" />
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

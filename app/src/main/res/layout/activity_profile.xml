@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:background="@drawable/backgroundtest2">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,8 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="fr.indianacroft.wildhunt.ProfileActivity"
-        android:background="@drawable/wood_background3">
+        tools:context="fr.indianacroft.wildhunt.ProfileActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
@@ -26,9 +26,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/appbar_padding_top"
             android:description="@style/AppTheme.AppBarOverlay"
-            android:background="@android:color/transparent"
-            tools:layout_editor_absoluteY="25dp"
-            tools:layout_editor_absoluteX="8dp">
+            android:background="@drawable/bars_colors">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -70,84 +68,69 @@
             tools:layout_editor_absoluteX="0dp">
 
             <ImageView
-                android:id="@+id/imageViewAvatar2"
+                android:id="@+id/imageViewSendPhoto"
                 android:layout_width="162dp"
                 android:layout_height="126dp"
                 app:srcCompat="@drawable/boy"
-                app:layout_constraintRight_toLeftOf="@+id/textView6"
+                app:layout_constraintRight_toLeftOf="@+id/titlePopUp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/butUpload"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                style="@style/ButtonBlue"
                 android:id="@+id/butUpload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/upload_ta_photo"
-                app:layout_constraintRight_toLeftOf="@+id/butLoad"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/butSend"
+                app:layout_constraintLeft_toRightOf="@+id/butLoad"
                 app:layout_constraintBottom_toTopOf="@+id/textView13"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar2" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewSendPhoto" />
 
             <Button
+                style="@style/ButtonBlue"
                 android:id="@+id/butLoad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/prendre_nouvelle_photo"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/butUpload"
+                app:layout_constraintRight_toLeftOf="@+id/butUpload"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/textView13"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar2" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewSendPhoto" />
 
             <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/titlePopUp"
+                android:layout_width="75dp"
+                android:layout_height="128dp"
+                android:background="@drawable/button_shape2"
                 android:text="TextView"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/imageViewAvatar2"
-                app:layout_constraintBottom_toTopOf="@+id/textView11"
+                app:layout_constraintLeft_toRightOf="@+id/imageViewSendPhoto"
+                app:layout_constraintBottom_toTopOf="@+id/butSend"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/imageViewAvatar2"
-                app:layout_constraintBottom_toTopOf="@+id/textView12"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/imageViewAvatar2"
-                app:layout_constraintBottom_toTopOf="@+id/butLoad"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-            <TextView
                 android:id="@+id/textView13"
-                android:layout_width="271dp"
-                android:layout_height="42dp"
-                android:text="TextView"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/textView14"
-                app:layout_constraintTop_toBottomOf="@+id/butUpload" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="275dp"
-                android:layout_height="49dp"
+                android:layout_width="278dp"
+                android:layout_height="166dp"
+                android:background="@drawable/button_shape2"
                 android:text="TextView"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/butUpload" />
+
+            <Button
+                style="@style/ButtonBlue"
+                android:id="@+id/butSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/envoi_photo"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/butUpload"
+                app:layout_constraintBottom_toTopOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/titlePopUp" />
 
         </android.support.constraint.ConstraintLayout>
 

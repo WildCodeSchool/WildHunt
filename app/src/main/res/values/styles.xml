@@ -3,9 +3,10 @@
     <!-- Base application description. -->
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your description here. -->
-        <item name="colorPrimary">#1c699e</item>
-        <item name="colorPrimaryDark">#9E511C</item>
-        <item name="colorAccent">#9e1c28</item>
+        <item name="colorPrimary">#FFD05C</item>
+        <item name="colorPrimaryDark">#33495E</item>
+        <item name="colorAccent">#84DBFF</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -13,8 +14,54 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopUp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+    </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+
+    // Titres
+    <style name="MainTitle">
+        <item name="android:textColor">#33495E</item>
+    </style>
+
+    // Connexion
+    <style name="Connexion">
+        <item name="android:textColor">#33495E</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColorHint">#33495E</item>
+        <item name="android:background">@drawable/button_shape3</item>
+    </style>
+    <style name="ButtonYellow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#33495E</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColorHint">#33495E</item>
+        <item name="android:background">@drawable/button_shape2</item>
+    </style>
+    <style name="ButtonBlue">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/button_shape</item>
+    </style>
+    <style name="YellowTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <!--<item name="android:background">@drawable/bars_colors2</item>-->
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
 
 </resources>
