@@ -9,10 +9,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.app.Activity;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -24,6 +28,7 @@ import com.google.firebase.storage.StorageReference;
 public class RulesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private String mUserId;
+    private Button buttonPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +54,7 @@ public class RulesActivity extends AppCompatActivity implements NavigationView.O
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        /* Bottom Navigation Bar
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        BottomNavigationViewHelper.disableShiftMode(navigation);*/
+        navigationView.setItemIconTintList(null);
 
         // Avatar
         // POUR CHANGER L'AVATAR SUR LA PAGE AVEC CELUI CHOISI
@@ -73,6 +74,16 @@ public class RulesActivity extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RulesActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Button Play
+        buttonPlay = findViewById(R.id.buttonPlay);
+        buttonPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PlayerActivity.class);
                 startActivity(intent);
             }
         });
@@ -98,12 +109,15 @@ public class RulesActivity extends AppCompatActivity implements NavigationView.O
             Intent intent = new Intent(getApplicationContext(), RulesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_play) {
-            Intent intent = new Intent(getApplicationContext(), HomeJoueurActivity.class);
+            Intent intent = new Intent(getApplicationContext(), PlayerActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_lobby) {
+            Intent intent = new Intent(getApplicationContext(), LobbyActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_create) {
-            startActivity(new Intent(getApplicationContext(), HomeGameMasterActivity.class));
+            startActivity(new Intent(getApplicationContext(), CreateQuestActivity.class));
         } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(getApplicationContext(), HomeGameMasterActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ValidateQuestActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_delete) {
             startActivity(new Intent(getApplicationContext(), ConnexionActivity.class));
@@ -112,28 +126,4 @@ public class RulesActivity extends AppCompatActivity implements NavigationView.O
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    /* Bottom Navigation Bar
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    Toast.makeText(HomeGameMasterActivity.this, "Créer lien page Home", Toast.LENGTH_SHORT).show();
-                    return true;
-                case R.id.navigation_camera:
-                    Toast.makeText(HomeGameMasterActivity.this, "Créer lien page camera", Toast.LENGTH_SHORT).show();
-                    return true;
-                case R.id.navigation_switch:
-                    Intent intent = new Intent(HomeGameMasterActivity.this, HomeJoueurActivity.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.navigation_notifications:
-                    Toast.makeText(HomeGameMasterActivity.this, "Créer lien page Notifications", Toast.LENGTH_SHORT).show();
-                    return true;
-            }
-            return false;
-        }
-    };*/
 }

@@ -10,41 +10,47 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="178dp"
-        android:layout_height="169dp"
-        app:srcCompat="@drawable/camera"
+        android:layout_width="282dp"
+        android:layout_height="257dp"
+        app:srcCompat="@drawable/pirate3"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/connexionUserName"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="47dp"
+        app:layout_constraintHorizontal_bias="0.523" />
 
     <EditText
-        style="@style/Connexion"
         android:id="@+id/connexionUserName"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/border"
         android:hint="@string/pseudo"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/connexionUserPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        style="@style/Connexion"
         android:id="@+id/connexionUserPassword"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/buttonConnexionSend"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/connexionUserName" />
 
     <Button
-        style="@style/ButtonYellow"
         android:id="@+id/buttonConnexionSend"
         android:text="@string/connexion"
+        android:background="@drawable/button_shape"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:layout_constraintRight_toRightOf="parent"

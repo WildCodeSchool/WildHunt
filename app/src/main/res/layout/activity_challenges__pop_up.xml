@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fr.indianacroft.wildhunt.ChallengesActivity_PopUp"
+    android:background="@drawable/layout_colors2">
+
+    <Button
+        style="@style/ButtonBlue"
+        android:id="@+id/takePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nouvelle_photo"
+        app:layout_constraintRight_toLeftOf="@+id/chooseImg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imgView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        style="@style/ButtonBlue"
+        android:id="@+id/chooseImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choisir_depuis_nla_gallerie"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/takePhoto"
+        app:layout_constraintBottom_toTopOf="@+id/imgView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        style="@style/ButtonBlue"
+        android:id="@+id/buttonOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valider"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgView" />
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="265dp"
+        android:layout_height="217dp"
+        app:srcCompat="@drawable/camera"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOK"
+        app:layout_constraintTop_toBottomOf="@+id/takePhoto" />
+
+</android.support.constraint.ConstraintLayout>
+

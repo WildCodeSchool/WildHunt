@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:background="@drawable/backgroundtest2">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="fr.indianacroft.wildhunt.CreateQuestActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/appbar_padding_top"
+            android:description="@style/AppTheme.AppBarOverlay"
+            android:background="@drawable/bars_colors">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="@string/create_quest"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/imageViewAvatar"
+                    android:layout_width="66dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/man"
+                    android:layout_gravity="end"
+                    android:padding="5dp"/>
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:layout_editor_absoluteY="64dp"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:id="@+id/quest_title"
+                android:layout_width="344dp"
+                android:layout_height="23dp"
+                android:text="@string/quest_title"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/name_quest"
+                android:layout_toEndOf="@+id/name_quest"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/name_quest" />
+
+            <EditText
+                android:id="@+id/name_quest"
+                android:layout_width="329dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:gravity="center"
+                android:hint="@string/hint_quest_name"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/button_shape2"
+                android:layout_below="@+id/playerActivityNameQuestTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/life_duration_quest_title"
+                app:layout_constraintTop_toBottomOf="@+id/quest_title" />
+
+            <EditText
+                android:id="@+id/description_quest"
+                android:layout_width="326dp"
+                android:layout_height="107dp"
+                android:ems="10"
+                android:background="@drawable/button_shape2"
+                android:inputType="textPersonName"
+                android:gravity="center"
+                android:hint="@string/hint_quest_description"
+                android:maxLength="200"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/button_create_quest"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_challenge" />
+
+            <TextView
+                android:id="@+id/life_duration_quest_title"
+                android:layout_width="200dp"
+                android:layout_height="23dp"
+                android:text="@string/life_duration_quest_title"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/name_quest"
+                android:layout_toEndOf="@+id/name_quest"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/spinner_challenge"
+                app:layout_constraintBottom_toTopOf="@+id/description_quest"
+                app:layout_constraintTop_toBottomOf="@+id/name_quest" />
+
+            <Spinner
+                android:id="@+id/spinner_challenge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/name_quest"
+                android:layout_below="@+id/life_duration_quest_title"
+                android:layout_alignBottom="@+id/name_quest"
+                android:layout_toRightOf="@+id/name_quest"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/life_duration_quest_title"
+                app:layout_constraintBottom_toTopOf="@+id/description_quest"
+                app:layout_constraintTop_toBottomOf="@+id/name_quest" />
+
+            <Button
+                android:id="@+id/button_create_quest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_quest_button"
+                android:layout_below="@+id/butAddNewChallenge"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_shape"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/butAddNewChallenge"
+                app:layout_constraintTop_toBottomOf="@+id/description_quest" />
+
+            <Button
+                android:id="@+id/butAddNewChallenge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/add_new_challenge"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_shape"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerViewChallengeCreated"
+                app:layout_constraintTop_toBottomOf="@+id/button_create_quest" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewChallengeCreated"
+                android:layout_width="283dp"
+                android:layout_height="77dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/butAddNewChallenge" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
+

@@ -2,34 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <!--<item-->
-            <!--android:id="@+id/nav_home"-->
-            <!--android:icon="@drawable/home"-->
-            <!--android:title="@string/nav_home" />-->
         <item
             android:id="@+id/nav_rules"
-            android:icon="@drawable/book"
+            android:icon="@drawable/book2"
             android:title="@string/nav_rules" />
         <item
             android:id="@+id/nav_play"
-            android:icon="@drawable/play"
+            android:icon="@drawable/play2"
             android:title="@string/nav_play" />
-        <!--<item-->
-            <!--android:id="@+id/nav_profile"-->
-            <!--android:icon="@drawable/man_user"-->
-            <!--android:title="@string/nav_profile" />-->
+        <item
+            android:id="@+id/nav_lobby"
+            android:icon="@drawable/map2"
+            android:title="@string/nav_lobby" />
         <item
             android:id="@+id/nav_create"
-            android:icon="@drawable/map"
+            android:icon="@drawable/plus"
             android:title="@string/nav_create" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/settings"
+            android:icon="@drawable/settings2"
             android:title="@string/nav_manage" />
 
         <item
             android:id="@+id/nav_delete"
-            android:icon="@drawable/delete3"
+            android:icon="@drawable/delete9"
             android:title="@string/nav_delete" />
     </group>
 

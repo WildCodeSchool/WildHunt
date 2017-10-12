@@ -57,10 +57,9 @@
     </style>
     <style name="YellowTitle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">40sp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
-        <!--<item name="android:background">@drawable/bars_colors2</item>-->
         <item name="android:textColor">@color/colorBlue</item>
     </style>
 

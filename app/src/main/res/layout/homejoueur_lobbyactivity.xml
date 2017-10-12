@@ -23,6 +23,7 @@
 
     <TextView
         style="@style/YellowTitle"
+        android:background="@drawable/layout_colors2"
         android:id="@+id/buttonListQuest"
         android:text="@string/lobby_list_party"
         android:clickable="false"

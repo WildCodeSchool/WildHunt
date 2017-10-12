@@ -13,21 +13,19 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
         android:id="@+id/main_content"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="fr.indianacroft.wildhunt.RulesActivity"
-        android:focusable="true"
-        android:focusableInTouchMode="true">
+        tools:context="fr.indianacroft.wildhunt.RulesActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/appbar_padding_top"
-            android:theme="@style/AppTheme.AppBarOverlay"
+            android:description="@style/AppTheme.AppBarOverlay"
             android:background="@drawable/bars_colors">
 
             <android.support.v7.widget.Toolbar
@@ -38,6 +36,19 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 android:background="@android:color/transparent">
 
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="@string/title_activity_rules"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
                 <ImageView
                     android:id="@+id/imageViewAvatar"
                     android:layout_width="66dp"
@@ -46,72 +57,49 @@
                     android:layout_gravity="end"
                     android:padding="5dp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Règles du jeu"
-                    android:gravity="center"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
             </android.support.v7.widget.Toolbar>
-
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/container"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:layout_editor_absoluteY="64dp"
-            tools:layout_editor_absoluteX="0dp">
+            android:orientation="vertical"
+            android:background="@drawable/scroll2"
+            android:paddingTop="70dp"
+            android:paddingRight="34dp"
+            android:paddingLeft="32dp"
+            android:paddingBottom="60dp">
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/camera"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/textView3"
-                app:layout_constraintBottom_toTopOf="@+id/textView4"
-                app:layout_constraintTop_toTopOf="parent" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="158dp"
-                android:layout_height="104dp"
-                android:background="@drawable/button_shape2"
-                android:text="WELCOME TO THE WILD HUNT"
-                app:layout_constraintRight_toLeftOf="@+id/imageView5"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/textView4"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/rules"
+                    android:textColor="@color/colorBlue"
+                    android:gravity="center" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="290dp"
-                android:layout_height="249dp"
-                android:background="@drawable/button_shape2"
-                android:text="Règles du jeu"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/button5"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            </ScrollView>
 
-            <Button
-                style="@style/ButtonBlue"
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/jouer"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
-        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/buttonPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Jouer"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_shape" />
 
     </LinearLayout>
 

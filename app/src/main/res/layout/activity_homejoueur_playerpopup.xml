@@ -1,79 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@drawable/popup"
-android:orientation="vertical"
-android:theme="@style/AppTheme.PopUp"
-tools:context="fr.indianacroft.wildhunt.HomeJoueur_PlayerPopUp"
-    tools:layout_editor_absoluteY="25dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_colors2"
+    android:theme="@style/AppTheme.PopUp"
+    tools:context="fr.indianacroft.wildhunt.ProfileActivity_PopUp"
+    tools:layout_editor_absoluteY="0dp"
     tools:layout_editor_absoluteX="0dp">
 
     <TextView
         android:id="@+id/titlePopUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_shape2"
         android:text="@string/titlePopUp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorBlue"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.502" />
-
-    <ImageView
-        android:id="@+id/imageViewSendPhoto"
-        android:layout_width="211dp"
-        android:layout_height="203dp"
-        app:srcCompat="@drawable/camera"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintVertical_chainStyle="spread_inside"
-        android:layout_marginTop="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/titlePopUp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="0.503" />
-
-    <Button
-        style="@style/ButtonBlue"
-        android:id="@+id/butUpload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/upload_ta_photo"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSendPhoto"
-        android:layout_marginRight="32dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/butLoad"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="0.815" />
+        app:layout_constraintBottom_toTopOf="@+id/butLoad"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         style="@style/ButtonBlue"
         android:id="@+id/butLoad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/prendre_nouvelle_photo"
-        android:layout_marginLeft="44dp"
+        android:text="@string/nouvelle_photo"
+        app:layout_constraintRight_toLeftOf="@+id/butUpload"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSendPhoto" />
+        app:layout_constraintBottom_toTopOf="@+id/imageViewSendPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/titlePopUp" />
+
+    <Button
+        style="@style/ButtonBlue"
+        android:id="@+id/butUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choisir_depuis_nla_gallerie"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/butLoad"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewSendPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/titlePopUp" />
 
     <Button
         style="@style/ButtonBlue"
         android:id="@+id/butSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/send_photo"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/valider"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/butLoad" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSendPhoto" />
+
+    <ImageView
+        android:id="@+id/imageViewSendPhoto"
+        android:layout_width="265dp"
+        android:layout_height="217dp"
+        app:srcCompat="@drawable/camera"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/butSend"
+        app:layout_constraintTop_toBottomOf="@+id/butUpload" />
 
 </android.support.constraint.ConstraintLayout>
