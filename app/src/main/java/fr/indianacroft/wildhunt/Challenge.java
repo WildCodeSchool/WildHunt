@@ -11,13 +11,15 @@ public class Challenge {
     private String hint_challenge;
     private String challenge_creatorID;
     private String challenge_questId;
+    private int challenge_nrbpoint;
 
-    public Challenge(String challenge_name, String challenge_difficulty, String hint_challenge, String challenge_creatorID, String challenge_questId) {
+    public Challenge(String challenge_name, String challenge_difficulty, String hint_challenge, String challenge_creatorID, String challenge_questId, int challenge_nrbpoint) {
         this.challenge_name = challenge_name;
         this.challenge_difficulty = challenge_difficulty;
         this.hint_challenge = hint_challenge;
         this.challenge_creatorID = challenge_creatorID;
         this.challenge_questId = challenge_questId;
+        this.challenge_nrbpoint = challenge_nrbpoint;
     }
 
     public Challenge() {
@@ -62,6 +64,14 @@ public class Challenge {
 
     public void setChallenge_questId(String challenge_questId) {
         this.challenge_questId = challenge_questId;
+    }
+
+    public int getChallenge_nrbpoint() {
+        return challenge_nrbpoint;
+    }
+
+    public void setChallenge_nrbpoint(int challenge_nrbpoint) {
+        this.challenge_nrbpoint = challenge_nrbpoint;
     }
 
 
