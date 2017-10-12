@@ -32,8 +32,6 @@ public class LobbyViewHolder extends RecyclerView.ViewHolder {
         // Pour recuperer la key d'un user (pour le lier a une quête)
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(itemView.getContext());
         mUserId = preferences.getString("mUserId", "");
-        /////////////////////////////////////////////////////////////////
-
 
         mNamePartyLobby = (TextView) itemView.findViewById(R.id.buttonLobbyName);
 
@@ -42,7 +40,6 @@ public class LobbyViewHolder extends RecyclerView.ViewHolder {
 
         mJoinPartyLobby = (Button) itemView.findViewById(R.id.buttonLobbyJoin);
         mJoinPartyLobby.setVisibility(View.GONE);
-
 
         mJoinPartyLobby.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,14 +66,12 @@ public class LobbyViewHolder extends RecyclerView.ViewHolder {
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
-
                 Intent intent = new Intent(view.getContext(), PlayerActivity.class);
                 view.getContext().startActivity(intent);
             }
         });
 
-
-                mDiscoverPartyLobby = (Button) itemView.findViewById(R.id.buttonLobbyDetails);
+        mDiscoverPartyLobby = (Button) itemView.findViewById(R.id.buttonLobbyDetails);
         mDiscoverPartyLobby.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

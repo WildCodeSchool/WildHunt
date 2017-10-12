@@ -31,15 +31,14 @@ import com.google.firebase.storage.StorageReference;
 
 public class ValidateQuestActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button butAddNewChallenge;
-    Button button_create_quest;
-    EditText name_quest;
-    EditText description_quest;
+    Button butAddNewChallenge, button_create_quest;
+    EditText name_quest, description_quest;
     Spinner spinner_quest;
     FirebaseDatabase ref;
     DatabaseReference childRef;
     private String mUserId;
     private String mUserName;
+    ImageView imageViewAvatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,18 +68,19 @@ public class ValidateQuestActivity extends AppCompatActivity implements Navigati
 
         // Avatar
         // POUR CHANGER L'AVATAR SUR LA PAGE AVEC CELUI CHOISI
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
-        final ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
-        // Load the image using Glide
-        if (storageReference.getDownloadUrl().isSuccessful()){
-            Glide.with(getApplicationContext())
-                    .using(new FirebaseImageLoader())
-                    .load(storageReference)
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(imageViewAvatar);
-        }
+//        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
+//        final ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
+//        // Load the image using Glide
+//        if (storageReference.getDownloadUrl().isSuccessful()){
+//            Glide.with(getApplicationContext())
+//                    .using(new FirebaseImageLoader())
+//                    .load(storageReference)
+//                    .skipMemoryCache(true)
+//                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                    .into(imageViewAvatar);
+//        }
 
+        imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
         imageViewAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,17 +88,7 @@ public class ValidateQuestActivity extends AppCompatActivity implements Navigati
                 startActivity(intent);
             }
         });
-
-
-
-
-
-        // ENTER CODE HERE
-
-
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -131,6 +121,11 @@ public class ValidateQuestActivity extends AppCompatActivity implements Navigati
         } else if (id == R.id.nav_play) {
             Intent intent = new Intent(getApplicationContext(), PlayerActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_lobby) {
+            Intent intent = new Intent(getApplicationContext(), LobbyActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_create) {
+            startActivity(new Intent(getApplicationContext(), CreateQuestActivity.class));
         } else if (id == R.id.nav_create) {
             startActivity(new Intent(getApplicationContext(), CreateQuestActivity.class));
         } else if (id == R.id.nav_manage) {

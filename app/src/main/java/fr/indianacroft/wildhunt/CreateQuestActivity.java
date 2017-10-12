@@ -33,15 +33,13 @@ import com.google.firebase.storage.StorageReference;
 
 public class CreateQuestActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button butAddNewChallenge;
-    Button button_create_quest;
-    EditText name_quest;
-    EditText description_quest;
+    Button butAddNewChallenge, button_create_quest;
+    EditText name_quest, description_quest;
+    ImageView imageViewAvatar;
     Spinner spinner_quest;
     FirebaseDatabase ref;
     DatabaseReference childRef;
-    private String mUserId;
-    private String mUserName;
+    private String mUserId, mUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +50,6 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
        final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mUserId = sharedPreferences.getString("mUserId", mUserId);
         Log.d("key", mUserId);
-        /////////////////////////////////////////////////////////////////
 
         // Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -71,18 +68,18 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
 
         // Avatar
         // POUR CHANGER L'AVATAR SUR LA PAGE AVEC CELUI CHOISI
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
-        final ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
-        // Load the image using Glide
-        if (storageReference.getDownloadUrl().isSuccessful()){
-            Glide.with(getApplicationContext())
-                    .using(new FirebaseImageLoader())
-                    .load(storageReference)
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(imageViewAvatar);
-        }
-
+//        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
+//        final ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
+//        // Load the image using Glide
+//        if (storageReference.getDownloadUrl().isSuccessful()){
+//            Glide.with(getApplicationContext())
+//                    .using(new FirebaseImageLoader())
+//                    .load(storageReference)
+//                    .skipMemoryCache(true)
+//                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                    .into(imageViewAvatar);
+//        }
+        imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
         imageViewAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,14 +88,12 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
             }
         });
 
-
         // Spinner
         spinner_quest = (Spinner) findViewById(R.id.spinner_challenge);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(),
                 R.array.life_duration, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_quest.setAdapter(adapter);
-
 
         // Database
         name_quest = (EditText) findViewById(R.id.name_quest);
@@ -116,8 +111,7 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
                 String nameContent = name_quest.getText().toString();
                 String descriptionContent = description_quest.getText().toString();
                 String spinnerContent = spinner_quest.getSelectedItem().toString();
-
-
+                Toast.makeText(getApplicationContext(), "Partie créée avec succès !\nAjoute des défis maintenant !", Toast.LENGTH_LONG).show();
                 //  DatabaseReference childRef = ref.getReference("form");
                 // On recupere la quete crée par l'user actuel pour link challenge a la quête
                 DatabaseReference refUser =
@@ -127,10 +121,7 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         User user = dataSnapshot.getValue(User.class);
                         mUserName = user.getUser_name();
-
                         childRef.child(questid).child("quest_creatorName").setValue(mUserName);
-                        Toast.makeText(getApplicationContext(), "Partie créée avec succès !\nAjoute des défis maintenant !", Toast.LENGTH_LONG).show();
-
                     }
 
                     @Override
@@ -157,8 +148,6 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("mCreatedQuest", questid);
                 editor.apply();
-
-
             }
         });
 

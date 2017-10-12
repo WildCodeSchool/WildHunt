@@ -91,6 +91,7 @@
     <string name="soumettre">Soumettre</string>
 
     // Page Défi en cours
+    <string name="validate_challenges">VALIDER MES DEFIS</string>
     <string name="warning_hint">Attention, vous perdrez des points ! Re-cliquez pour valider</string>
 
     // Page Connexion
@@ -102,16 +103,17 @@
     <string name="password">PASSWORD</string>
 
     // Page Règles du jeu
-    <string name="rules">La 1ère règle du jeu c’est de lire les règles du jeux !
-La 2ème règle du jeu c’est de comprendre les règles du jeux !
-Le but du jeu est de réaliser l’ensemble des défis d’une partie.Pour chaque défi, tu pourras consulter une photo mystérieuse. Tu dois retrouver l’endroit où la photo a été prise, te prendre en photo sur ce lieu (#selfie!) et l’envoyer via l’appli pour validation.
-Seul le créateur de la partie  pourra valider ta réponse. Tu gagnes des points selon la difficulté de chaque défi.
-Pour chaque défi un indice est proposé. Si tu réalises le défi sans consulter l’indice tu gagnes la totalité des points. Sinon tu en perd un peu !
-Tu peux choisir n’importe quel défi mais tu ne peux te lancer que dans un seul défi à la fois !
-Tu peux jouer seul ou avec des amis. Le joueur ou l’équipe qui a le plus de points à la fin de la partie est déclarée vainqueur !
-BONUS : Cette appli te donne la possibilité de créer toi-même tes parties en tant que maître du jeu et d’y inviter tes amis comme joueur. Mais attention, tu ne peux pas créer et jouer sur la même partie 😉
-A toi de jouer !</string>
-    <string name="title_activity_rules">RulesActivity</string>
+    <string name="rules">La 1ère règle du jeu, c’est de lire les règles du jeux !\nLa 2ème règle du jeu,
+        c’est de comprendre les règles du jeux !\nLe but du jeu est de réaliser l’ensemble des défis
+        d’une partie. Pour chaque défi, tu pourras consulter une photo mystérieuse.\nTu dois retrouver
+        l’endroit où la photo a été prise, te prendre en photo sur ce lieu (#selfie!) et l’envoyer via l’appli pour validation.
+        Seul le créateur de la partie  pourra valider ta réponse.\nTu gagnes des points selon la difficulté de chaque défi.
+        Pour chaque défi un indice est proposé. Si tu réalises le défi sans consulter l’indice tu gagnes la totalité des points.
+        Sinon tu en perd un peu !\nTu peux choisir n’importe quel défi mais tu ne peux te lancer que dans un seul défi à la fois !
+        Tu peux jouer seul ou avec des amis. Le joueur ou l’équipe qui a le plus de points à la fin de la partie est déclarée vainqueur !\n
+        BONUS : Cette appli te donne la possibilité de créer toi-même tes parties en tant que maître
+        du jeu et d’y inviter tes amis comme joueur.\nMais attention, tu ne peux pas créer et jouer sur la même partie 😉\nA toi de jouer !</string>
+    <string name="title_activity_rules">Règles du jeu</string>
 
     // Page Défis à valider
     <string name="mes_d_fis_valider">Mes défis à valider</string>

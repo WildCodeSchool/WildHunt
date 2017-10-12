@@ -1,6 +1,5 @@
 package fr.indianacroft.wildhunt;
 
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.camera2.CaptureResult;
@@ -12,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +24,6 @@ import java.security.Key;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
-
 
 public class ConnexionActivity extends AppCompatActivity {
 
@@ -54,7 +53,6 @@ public class ConnexionActivity extends AppCompatActivity {
             editTextUserName.setText(sharedPrefUserName);
             editTextUserPassword.setText(sharedPrefUserPassword);
         }
-
 
         // Au clic du bouton, c'est la que tout se passe
         buttonSend.setOnClickListener(new View.OnClickListener() {
@@ -89,19 +87,14 @@ public class ConnexionActivity extends AppCompatActivity {
                                         editor.putString(userPassword, userPasswordContent);
                                         editor.putString("mUserId", mUserId);
                                         editor.apply();
-
-
                                         startActivity(new Intent(getApplicationContext(), PlayerActivity.class));
-
-
                                     } else {
                                         Toast.makeText(getApplicationContext(), R.string.error_password, Toast.LENGTH_SHORT).show();
                                     }
                                     return;
-
                                 }
-
                             }
+
                             // Le compte n'existe pas, on le créer !
                             String questContent = "Pas de qûete pour l'instant";
                             User user = new User(userNameContent, userPasswordContent, questContent);
@@ -122,10 +115,8 @@ public class ConnexionActivity extends AppCompatActivity {
                             editor.putString("mUserId", userId);
                             editor.apply();
                             Toast.makeText(getApplicationContext(), R.string.created_user, Toast.LENGTH_SHORT).show();
-
                             startActivity(new Intent(getApplicationContext(),RulesActivity.class));
                         }
-
                         public String mEncrypt(String userPassword,String key){
                             try
                             {
@@ -139,7 +130,6 @@ public class ConnexionActivity extends AppCompatActivity {
                                 return null;
                             }
                         }
-
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
 
@@ -149,5 +139,4 @@ public class ConnexionActivity extends AppCompatActivity {
             }
         });
     }
-
 }

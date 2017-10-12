@@ -92,7 +92,6 @@ public class ProfileActivity_PopUp extends AppCompatActivity {
                 // PICK IMAGE REQUEST = photo de la gallery
                 if(filePath != null) {
                     pd.show();
-
                     StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
 
                     // Uploading the image
@@ -188,7 +187,6 @@ public class ProfileActivity_PopUp extends AppCompatActivity {
             Bundle extras = data.getExtras();
             bitmap = (Bitmap) extras.get("data");
             imageView.setImageBitmap(bitmap);
-
         }
     }
 }

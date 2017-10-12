@@ -29,6 +29,7 @@ public class RulesActivity extends AppCompatActivity implements NavigationView.O
 
     private String mUserId;
     private Button buttonPlay;
+    private ImageView imageViewAvatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,18 +59,20 @@ public class RulesActivity extends AppCompatActivity implements NavigationView.O
 
         // Avatar
         // POUR CHANGER L'AVATAR SUR LA PAGE AVEC CELUI CHOISI
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
-        final ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
-        // Load the image using Glide
-        if (storageReference.getDownloadUrl().isSuccessful()){
-            Glide.with(getApplicationContext())
-                    .using(new FirebaseImageLoader())
-                    .load(storageReference)
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(imageViewAvatar);
-        }
+//        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
+//        final ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
+//        // Load the image using Glide
+//        // TODO : corriger affichage avatar qd l'utilisateur est nouveau
+//        if (storageReference.getDownloadUrl().isSuccessful()){
+//            Glide.with(getApplicationContext())
+//                    .using(new FirebaseImageLoader())
+//                    .load(storageReference)
+//                    .skipMemoryCache(true)
+//                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                    .into(imageViewAvatar);
+//        }
 
+        imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
         imageViewAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
