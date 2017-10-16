@@ -26,10 +26,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeGameMasterActivity"
-            android:label="@string/title_activity_tab_"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".PlayerActivity_PopUp"
             android:label="PartyPopUp"
             android:theme="@style/AppTheme.PopUp" />

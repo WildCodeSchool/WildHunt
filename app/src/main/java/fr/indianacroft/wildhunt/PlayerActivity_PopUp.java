@@ -52,8 +52,10 @@ public class PlayerActivity_PopUp extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mUserId = sharedPreferences.getString("mUserId", mUserId);
         Log.d("key", mUserId);
+        /////////////////////////////////////////////////////////////////
 
         mChallengeId = getIntent().getStringExtra("mChallengeKey");
+
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -89,6 +91,7 @@ public class PlayerActivity_PopUp extends AppCompatActivity {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         final StorageReference storageRef = storage.getInstance().getReference();
 
+
         // Database
         Button butSend = (Button) findViewById(R.id.butSend);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
@@ -114,15 +117,25 @@ public class PlayerActivity_PopUp extends AppCompatActivity {
                             .skipMemoryCache(true)
                             .diskCacheStrategy(DiskCacheStrategy.NONE)
                             .into(imageViewSendPhoto);
+
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
 
+
+
+
+
         butSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
+
                         // Upload photos on Firebase
                         if (filePath != null) {
                             progressDialog.show();
@@ -161,9 +174,13 @@ public class PlayerActivity_PopUp extends AppCompatActivity {
                                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                                     progressDialog.dismiss();
                                     Toast.makeText(getApplicationContext(), getString(R.string.toast_upload_success), Toast.LENGTH_LONG).show();
+
                                 }
                             });
                         }
+
+
+
             }
         });
     }
@@ -175,6 +192,7 @@ public class PlayerActivity_PopUp extends AppCompatActivity {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -197,4 +215,6 @@ public class PlayerActivity_PopUp extends AppCompatActivity {
             imageViewSendPhoto.setImageBitmap(imageBitmap);
         }
     }
+
+
 }

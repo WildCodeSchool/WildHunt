@@ -105,14 +105,13 @@
                     android:layout_weight="1"/>
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/textViewDifficulty"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/layout_colors2"
-                    android:text="difficulté"/>
+                    android:text="difficulté" />
 
             </LinearLayout>
-
 
             <ImageView
                 android:id="@+id/imageViewHomeJoueurToFind"
@@ -128,12 +127,24 @@
 
             <TextView
                 style="@style/YellowTitle"
-                android:padding="2dp"
+                android:padding="10dp"
                 android:id="@+id/textViewPlayerActivityHint"
-                tools:text="Ici sera présenter le texte de présentation du challenge et de la photo a trouver. Exemple quest_name du quartier etc"
+                tools:text="Ici l'indice apparaitra"
                 tools:layout_editor_absoluteY="426dp"
                 tools:layout_editor_absoluteX="0dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                style="@style/YellowTitle"
+                android:padding="10dp"
+                android:id="@+id/textViewPlayerActivityHint2"
+                android:background="@drawable/layout_colors2"
+                android:text="@string/votre_indice_a_t_utilis"
+                tools:layout_editor_absoluteY="426dp"
+                tools:layout_editor_absoluteX="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
 
             <!--<Button-->
                 <!--style="@style/ButtonBlue"-->

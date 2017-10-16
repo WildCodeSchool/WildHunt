@@ -11,18 +11,19 @@
 
     <TextView
         android:id="@+id/textViewLobbyDescription"
-        android:layout_width="330dp"
+        android:layout_width="328dp"
         android:layout_height="71dp"
         android:gravity="center_horizontal"
         android:textColor="@color/colorBlue"
         android:textSize="18sp"
         tools:text="Ce texte doit expliquer en quoi consiste la partie, le nombre de challenges, les quartiers etc, etc etc, une description quoi"
-        android:layout_marginBottom="7dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonLobbyJoin"
-        android:layout_marginRight="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLobbyJoin"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLobbyName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/buttonLobbyName"
@@ -32,27 +33,24 @@
         android:gravity="center"
         android:textColor="#33495E"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/buttonLobbyDetails"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewLobbyDescription" />
+        android:layout_marginStart="16dp" />
 
     <Button
         android:id="@+id/buttonLobbyDetails"
-        android:layout_width="35dp"
+        android:layout_width="36dp"
         android:layout_height="35dp"
         android:background="@drawable/down_arrow"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewLobbyDescription"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/buttonLobbyName"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <Button
         android:id="@+id/buttonLobbyJoin"
@@ -62,11 +60,8 @@
         android:elevation="8dp"
         android:text="@string/lobby_join_party"
         android:textColor="#FFFFFF"
-        android:layout_marginRight="88dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp" />
 

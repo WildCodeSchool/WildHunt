@@ -27,9 +27,11 @@
     <string name="toast_upload_success">Upload réussi !</string>
     <string name="progressdialog_upload">Uploading ...</string>
     <string name="sauvergarder_les_modifications">Sauvergarder les modifications</string>
+    <string name="vos_donn_es_personnelles">Vos données personnelles :</string>
+    <string name="personnalisez_votre_avatar">Personnalisez votre avatar :</string>
 
     // Page Profil PopUp
-    <string name="valider">Valider</string>
+    <string name="valider">Valider et continuer</string>
     <string name="choisir_depuis_nla_gallerie">Upload\nphoto</string>
     <string name="nouvelle_photo">Nouvelle\nPhoto</string>
 
@@ -76,14 +78,17 @@
     <string name="send_photo">Envoyer</string>
     <string name="error_noquest">Veuillez rejoindre d\'abord une partie</string>
     <string name="titlePopUp">Envoyer votre solution (Selfie !)</string>
+    <string name="votre_indice_a_t_utilis">Votre indice a été utilisé !</string>
 
     // Page Créer ma partie
     <string name="life_duration_quest_title">Durée de vie</string>
     <string name="create_quest_button">Créer la partie</string>
-    <string name="add_new_challenge">Ajouter des défis à votre nouvelle partie</string>
+    <string name="add_new_challenge">Ajouter des défis à votre partie</string>
     <string name="create_challenge_button">Créer un challenge</string>
     <string name="challenge">Challenge :</string>
     <string name="create_quest">CREER MA PARTIE</string>
+    <string name="toast_challenge2">Veuillez remplir tous les champs et ajouter des défis pour pouvoir créer votre partie</string>
+    <string name="toast_createdquest">Partie créée avec succès ! Ajoute des défis maintenant !</string>
 
     // Bottom Bar
     <string name="abandonner">Abandonner</string>

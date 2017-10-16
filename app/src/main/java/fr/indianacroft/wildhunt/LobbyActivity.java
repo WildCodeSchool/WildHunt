@@ -35,6 +35,10 @@ import com.google.firebase.storage.StorageReference;
 
 public class LobbyActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    Button butNewChallenge;
+    Button butNewChallenge2;
+    ImageView imageViewCancel;
+    ImageView imageViewCancel2;
     private String mUserId;
     private String mUser_name;
     private String mUser_quest;
@@ -46,7 +50,6 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
     private String mDiff_challenge;
     private String mHint_challenge;
     private String mKey_challenge;
-    ImageView imageViewAvatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +77,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
         navigationView.setItemIconTintList(null);
 
         // Avatar
-        imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
+        ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
         imageViewAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,17 +85,20 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
             }
         });
 
-//        // POUR CHANGER L'AVATAR SUR LA PAGE AVEC CELUI CHOISI
-//        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
-//        // Load the image using Glide
-//        if (storageReference.getDownloadUrl().isSuccessful()){
-//            Glide.with(getApplicationContext())
-//                    .using(new FirebaseImageLoader())
-//                    .load(storageReference)
-//                    .skipMemoryCache(true)
-//                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                    .into(imageViewAvatar);
-//        }
+        // POUR CHANGER L'AVATAR SUR LA PAGE AVEC CELUI CHOISI
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
+        // Load the image using Glide
+        if (storageReference.getDownloadUrl().isSuccessful()){
+            Glide.with(getApplicationContext())
+                    .using(new FirebaseImageLoader())
+                    .load(storageReference)
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(imageViewAvatar);
+        }
+
+
+
 
         // On appele les methodes declarées plus bas (pour chercher l'user, la quete, les challenges)
         searchUser();
@@ -102,6 +108,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
         recyclerViewLobby.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Quest");
+
 
         final FirebaseRecyclerAdapter mAdapter = new FirebaseRecyclerAdapter<Quest, LobbyViewHolder>(
                 Quest.class,
@@ -137,6 +144,9 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
                 TextView textViewLobbyDescription = (TextView) view.findViewById(R.id.textViewLobbyDescription);
                 Button buttonLobbyJoin = (Button) view.findViewById(R.id.buttonLobbyJoin);
 
+
+
+
                 if (textViewLobbyDescription.getVisibility() == View.VISIBLE) {
                     textViewLobbyDescription.setVisibility(View.GONE);
                     buttonLobbyJoin.setVisibility(View.GONE);
@@ -148,16 +158,16 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
                     for (int i = 0; i < mAdapter.getItemCount(); i++) {
                         if (i != position) {
                             LobbyViewHolder other = (LobbyViewHolder) recyclerViewLobby.findViewHolderForAdapterPosition(i);
-                            if (other != null) {
-                                other.mDescriptionPartyLobby.setVisibility(View.GONE);
-                                other.mJoinPartyLobby.setVisibility(View.GONE);
-                            }
+                            other.mDescriptionPartyLobby.setVisibility(View.GONE);
+                            other.mJoinPartyLobby.setVisibility(View.GONE);
                         }
                     }
                 }
             }
         });
+
     }
+
 
     // Methode utilisée pour afficher une ligne en dessous de chaque item du recycler view
     public class SimpleDividerItemDecoration extends RecyclerView.ItemDecoration {
@@ -166,6 +176,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
         public SimpleDividerItemDecoration(LobbyActivity context) {
             mDivider = context.getResources().getDrawable(R.drawable.line_divider);
         }
+
         @Override
         public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
             int left = parent.getPaddingLeft();
@@ -185,6 +196,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
             }
         }
     }
+
 
     // Drawer Menu
     @Override
@@ -228,6 +240,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
         return true;
     }
 
+
     // METHODE POUR TROUVER USER
     private void searchUser() {
 
@@ -240,13 +253,19 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
                 User user = dataSnapshot.getValue(User.class);
                 mUser_name = user.getUser_name();
                 mUser_quest = user.getUser_quest();
+
                 searchQuest();
+
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
+
     }
+
 
     // METHODE POUR TROUVER QUETE
     private void searchQuest() {
@@ -264,13 +283,18 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
                         Log.d(mQuest_name, "quest");
                         mQuest_description = quest.getQuest_description();
                         mLife_duration = quest.getLife_duration();
+
                         searcChallenges();
                         return;
                     }
                 }
+
+
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
+
             }
         });
     }
@@ -297,8 +321,10 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
                     }
                 }
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
+
             }
         });
     }

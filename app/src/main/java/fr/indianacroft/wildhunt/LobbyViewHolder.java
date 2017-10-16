@@ -55,6 +55,8 @@ public class LobbyViewHolder extends RecyclerView.ViewHolder {
                         for (DataSnapshot child : dataSnapshot.getChildren()) {
                             String questKey = child.getKey(); // ID de la quête
 
+
+
                             // On assigne l'ID de la qûete à l'utilisateur
                             DatabaseReference refUserQuest =
                                     FirebaseDatabase.getInstance().getReference().child("User").child(mUserId).child("user_quest");
