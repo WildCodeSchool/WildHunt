@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -25,16 +26,21 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
 
     ImageView imageViewAvatar, imageViewAvatar2;
     private String mUserId;
+    final String userName = "NameKey";
+    TextView textView6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        // Pour recuperer la key d'un user (pour le lier a une quête)
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        mUserId = sharedPreferences.getString("mUserId", mUserId);
+        // Save data from SharedPref and put them into textview
+        SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        mUserId = sharedpreferences.getString("mUserId", mUserId);
         Log.d("key", mUserId);
+        textView6 = (TextView) findViewById(R.id.textViewProfileDatas);
+        String sharedPrefUserName = sharedpreferences.getString(userName, "");
+        textView6.setText(sharedPrefUserName);
 
         // Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -70,32 +76,18 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
             }
         });
 
-        // Save images from Firebase and update them in Profil page
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
-        imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
+        // Drop Image from Firebase to upload it on Profil page
+        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+        StorageReference storageRef = firebaseStorage.getReference("Avatar");
+        StorageReference pathReference = storageRef.child(mUserId);
 
-        // POUR CHANGER L'AVATAR SUR LA PAGE AVEC CELUI CHOISI
-        storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
-        final ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
-        // Load the image using Glide
-        if (storageReference.getDownloadUrl().isSuccessful()){
-            Glide.with(getApplicationContext())
+            Glide.with(this)
                     .using(new FirebaseImageLoader())
-                    .load(storageReference)
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(imageViewAvatar);
-        }
-        if (storageReference.getDownloadUrl().isSuccessful()){
-            Glide.with(getApplicationContext())
-                    .using(new FirebaseImageLoader())
-                    .load(storageReference)
+                    .load(pathReference)
+                    .error(R.drawable.pirate5)
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .into(imageViewAvatar2);
-        }
-
-
     }
 
     // Drawer Menu

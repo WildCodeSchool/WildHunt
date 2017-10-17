@@ -2,13 +2,14 @@ package fr.indianacroft.wildhunt;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
+import android.support.v4.util.Pair;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -17,17 +18,19 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import android.widget.TextView;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ValidateQuestActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -38,8 +41,10 @@ public class ValidateQuestActivity extends AppCompatActivity implements Navigati
     Spinner spinner_quest;
     FirebaseDatabase ref;
     DatabaseReference childRef;
+    ImageView imageViewAvatar;
     private String mUserId;
     private String mUserName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,20 +72,8 @@ public class ValidateQuestActivity extends AppCompatActivity implements Navigati
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
-        // Avatar
-        // POUR CHANGER L'AVATAR SUR LA PAGE AVEC CELUI CHOISI
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Avatar").child(mUserId);
-        final ImageView imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
-        // Load the image using Glide
-        if (storageReference.getDownloadUrl().isSuccessful()){
-            Glide.with(getApplicationContext())
-                    .using(new FirebaseImageLoader())
-                    .load(storageReference)
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(imageViewAvatar);
-        }
 
+        imageViewAvatar = (ImageView) findViewById(R.id.imageViewAvatar);
         imageViewAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,15 +83,116 @@ public class ValidateQuestActivity extends AppCompatActivity implements Navigati
         });
 
 
-
-
-
         // ENTER CODE HERE
+        // METHODE POUR TROUVER CHALLENGE
+
+        DatabaseReference refUser =
+                FirebaseDatabase.getInstance().getReference().child("User").child(mUserId);
+        refUser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                // on recupere la qûete créee par un user
+                User user = dataSnapshot.getValue(User.class);
+                final String questId = user.getUser_createdquestID();
+
+                // On parcourt les challenges à valider dans le dossier de la qûete créee (id creator) par un user
+                // Sur firebase ca correspond a user_createdquestid
+                DatabaseReference refAvalider = FirebaseDatabase.getInstance().
+                        getReference("User").child(mUserId).child("aValider").child(questId);
+                refAvalider.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (final DataSnapshot dsp : dataSnapshot.getChildren()) {
+                            // On créer un tableau de la taille de tout les challenges présent
+                            final ArrayList<Pair> mapChallengeToValidate = new ArrayList<Pair>((int) dsp.getChildrenCount());
+
+
+
+
+                            // On recupere l'Id du challenge qu'on analyse
+                            String challengeIdToValidate = dsp.getKey();
+
+                            DatabaseReference refChallengeIdToValidate =
+                                    FirebaseDatabase.getInstance().getReference("Challenge").child(questId).child(challengeIdToValidate);
+                            refChallengeIdToValidate.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    //On recupere le nom du challenge correspondant a l'ID
+                                    Challenge challenge = dataSnapshot.getValue(Challenge.class);
+                                    final String challengeName = challenge.getChallenge_name();
+                                    int i = 0;
+                                    // On verifie les users dans ce challenge
+                                    for (DataSnapshot dsp2 : dsp.getChildren()) {
+                                        // On verifie si un user doit etre validé (false)
+                                        if ((boolean) dsp2.getValue() == false) {
+
+                                            // On recupere l'ID de l'user qui doit être validé
+                                            String userIdToValidate = dsp2.getKey();
+
+                                            DatabaseReference refUserToValidate = FirebaseDatabase.getInstance().getReference("User").child(userIdToValidate);
+                                            refUserToValidate.addValueEventListener(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                                    // On recupere son pseudo
+                                                    User user = dataSnapshot.getValue(User.class);
+                                                    String userName = user.getUser_name();
+                                                    // On link dans un Pair son pseudo avec le nom du challenge
+                                                    Pair<String, String> pair = new Pair<String, String>(challengeName, userName);
+                                                    mapChallengeToValidate.add(pair);
+
+
+                                                    String test = mapChallengeToValidate.get(0).first.toString();
+                                                    String test2 = mapChallengeToValidate.get(0).second.toString();
+//                                                    String test3 = mapChallengeToValidate.get(1).first.toString();
+//                                                    String test4 = mapChallengeToValidate.get(1).second.toString();
+
+                                                    TextView challName = (TextView) findViewById(R.id.challengeNameToValidate);
+                                                    challName.setText(test);
+                                                    TextView idName = (TextView) findViewById(R.id.idNameToValidate);
+                                                    idName.setText(test2);
+//                                                    TextView teseeeet = (TextView) findViewById(R.id.challengename2);
+//                                                    teseeeet.setText(test3);
+//                                                    TextView tezqtezt = (TextView) findViewById(R.id.idname2);
+//                                                    tezqtezt.setText(test4);
+
+                                                }
+
+                                                @Override
+                                                public void onCancelled(DatabaseError databaseError) {
+
+                                                }
+                                            });
+                                        }
+                                        i++;
+                                    }
+
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
 
 
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -119,6 +213,7 @@ public class ValidateQuestActivity extends AppCompatActivity implements Navigati
             super.onBackPressed();
         }
     }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -131,6 +226,11 @@ public class ValidateQuestActivity extends AppCompatActivity implements Navigati
         } else if (id == R.id.nav_play) {
             Intent intent = new Intent(getApplicationContext(), PlayerActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_lobby) {
+            Intent intent = new Intent(getApplicationContext(), LobbyActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_create) {
+            startActivity(new Intent(getApplicationContext(), CreateQuestActivity.class));
         } else if (id == R.id.nav_create) {
             startActivity(new Intent(getApplicationContext(), CreateQuestActivity.class));
         } else if (id == R.id.nav_manage) {

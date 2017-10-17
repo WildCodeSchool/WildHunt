@@ -69,47 +69,46 @@
 
             <ImageView
                 android:id="@+id/imageViewAvatar2"
-                android:layout_width="162dp"
-                android:layout_height="126dp"
+                android:layout_width="229dp"
+                android:layout_height="191dp"
                 app:srcCompat="@drawable/pirate5"
                 android:clickable="true"
-                app:layout_constraintRight_toLeftOf="@+id/textView6"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/textView13"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="75dp"
-                android:layout_height="128dp"
-                android:background="@drawable/button_shape2"
-                android:text="TextView"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/imageViewAvatar2"
-                app:layout_constraintBottom_toTopOf="@+id/textView13"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="281dp"
-                android:layout_height="228dp"
-                android:background="@drawable/button_shape2"
-                android:text="TextView"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/buttonSave"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            <Button
-                style="@style/ButtonBlue"
-                android:id="@+id/buttonSave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sauvergarder_les_modifications"
+            <TextView
+                android:id="@+id/textViewProfileDatas"
+                android:gravity="center"
+                android:layout_width="256dp"
+                android:layout_height="201dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                style="@style/ButtonYellow"
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/personnalisez_votre_avatar"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewAvatar2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/ButtonYellow"
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/vos_donn_es_personnelles"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/textViewProfileDatas"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar2" />
 
         </android.support.constraint.ConstraintLayout>
 
