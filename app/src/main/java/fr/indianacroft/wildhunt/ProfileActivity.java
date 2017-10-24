@@ -194,7 +194,7 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
                     nv = 3;
                     currentPercent = 1f;
                     min.setText("1000");
-                    max.setText("Infinit");
+                    max.setText("Infini");
                 }
 
                 simpleProgressBar.setProgress(Math.round(currentPercent*100));

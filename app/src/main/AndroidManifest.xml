@@ -23,7 +23,8 @@
         <activity
             android:name=".ConnexionActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,51 +34,63 @@
         <activity
             android:name=".PlayerActivity_PopUp"
             android:label="PartyPopUp"
-            android:theme="@style/AppTheme.PopUp" />
+            android:theme="@style/AppTheme.PopUp"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ChallengesActivity"
             android:label="@string/title_activity_challenges_"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ProfileActivity"
             android:label="@string/title_activity_profile_"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".RulesActivity"
             android:label="Rules"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PlayerActivity"
             android:label="Play"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ProfileActivity_PopUp"
             android:label="ProfilePopUp"
-            android:theme="@style/AppTheme.PopUp" />
+            android:theme="@style/AppTheme.PopUp"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LobbyActivity"
             android:label="Lobby"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CreateQuestActivity"
             android:label="Create Party"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ValidateQuestActivity"
             android:label="Validate"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ChallengeToValidateActivity"
             android:label="Validate"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ChallengeToValidateActivity_PopUp"
-            android:theme="@style/AppTheme.PopUp" />
+            android:theme="@style/AppTheme.PopUp"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CreditsActivity"
             android:label="Lobby"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

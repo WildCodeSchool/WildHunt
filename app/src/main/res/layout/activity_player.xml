@@ -144,62 +144,14 @@
             <TextView
                 android:id="@+id/textViewPlayerActivityHint2"
                 style="@style/Title"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/button_shape2"
                 android:padding="10dp"
                 android:text="@string/hint_need"
                 android:textColor="#FFFFFF"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="426dp" />
-
-            <!--<Button-->
-                <!--style="@style/ButtonBlue"-->
-                <!--android:id="@+id/buttonHomeJoueurHint"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Indice"-->
-                <!--app:layout_constraintBottom_toTopOf="@+id/textViewPlayerActivityHint"-->
-                <!--app:layout_constraintTop_toBottomOf="@+id/imageViewHomeJoueurToFind"-->
-                <!--app:layout_constraintRight_toRightOf="parent"-->
-                <!--app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--android:visibility="gone"/>-->
-
-            <!--<Button-->
-                <!--style="@style/ButtonBlue"-->
-                <!--android:id="@+id/buttonHomeJoueurSendSolution"-->
-                <!--android:layout_width="126dp"-->
-                <!--android:layout_height="66dp"-->
-                <!--android:text="Send Solution"-->
-                <!--app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--app:layout_constraintTop_toBottomOf="@+id/textViewPlayerActivityHint"-->
-                <!--app:layout_constraintRight_toRightOf="parent"-->
-                <!--app:layout_constraintLeft_toRightOf="@+id/buttonHomeJoueurQuitChallenge"-->
-                <!--android:visibility="gone"/>-->
-
-            <!--<Button-->
-                <!--style="@style/ButtonYellow"-->
-                <!--android:id="@+id/buttonHomeJoueurQuitChallenge"-->
-                <!--android:layout_width="175dp"-->
-                <!--android:layout_height="48dp"-->
-                <!--android:text="Abandon défi"-->
-                <!--app:layout_constraintBottom_toTopOf="@+id/buttonHomeJoueurQuitParty"-->
-                <!--app:layout_constraintTop_toBottomOf="@+id/textViewPlayerActivityHint"-->
-                <!--app:layout_constraintRight_toLeftOf="@+id/buttonHomeJoueurSendSolution"-->
-                <!--app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--android:visibility="gone"/>-->
-
-            <!--<Button-->
-                <!--style="@style/ButtonYellow"-->
-                <!--android:id="@+id/buttonHomeJoueurQuitParty"-->
-                <!--android:layout_width="175dp"-->
-                <!--android:layout_height="48dp"-->
-                <!--android:text="Abandon partie"-->
-                <!--app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--app:layout_constraintTop_toBottomOf="@+id/buttonHomeJoueurQuitChallenge"-->
-                <!--app:layout_constraintRight_toLeftOf="@+id/buttonHomeJoueurSendSolution"-->
-                <!--app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--android:visibility="gone"/>-->
 
         </LinearLayout>
 
