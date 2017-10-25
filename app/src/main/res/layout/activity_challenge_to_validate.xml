@@ -60,10 +60,12 @@
             </android.support.v7.widget.Toolbar>
 
             <TextView
+                style="@style/Title"
                 android:id="@+id/validateUserName"
                 tools:text="User Name"
                 android:layout_height="40sp"
                 android:layout_width="match_parent"
+                android:fontFamily="sans-serif"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:background="@color/newcolor"
@@ -91,18 +93,22 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/Title"
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/button_shape2"
                     android:text="@string/challenge"
+                    android:fontFamily="sans-serif"
                     android:textAllCaps="true"
                     android:textColor="#FFFFFF" />
 
                 <Button
+                    style="@style/Title"
                     android:id="@+id/validateChallenge"
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
                     android:layout_weight="1"
                     android:background="@drawable/button_shape2"
                     android:textColor="#FFFFFF"
@@ -127,6 +133,7 @@
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation_validate"
             android:layout_width="match_parent"
+            android:fontFamily="sans-serif"
             android:layout_height="56dp"
             android:layout_gravity="bottom"
             android:background="@color/newcolor"

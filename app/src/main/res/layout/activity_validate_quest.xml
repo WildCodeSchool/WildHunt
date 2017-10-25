@@ -73,9 +73,10 @@
                 android:layout_weight="0.87"
                 android:layout_height="match_parent"
                 android:background="@drawable/button_shape2"
+                android:fontFamily="sans-serif"
                 android:text="@string/challenge"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 style="@style/Title" />
 
             <TextView
@@ -85,8 +86,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1.16"
                 android:background="@drawable/button_shape2"
+                android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:text="@string/nom_du_joueur"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#FFFFFF" />
@@ -96,10 +98,10 @@
                 android:layout_width="0dp"
                 android:gravity="center"
                 style="@style/Title"
+                android:fontFamily="sans-serif"
                 android:layout_weight="0.64"
                 android:layout_height="match_parent"
                 android:background="@drawable/button_shape2"
-                android:text=""
                 android:textColor="#FFFFFF" />
 
         </LinearLayout>
@@ -114,6 +116,7 @@
                 android:id="@+id/listView"
                 android:layout_width="0dp"
                 android:layout_height="440dp"
+                android:fontFamily="sans-serif"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"

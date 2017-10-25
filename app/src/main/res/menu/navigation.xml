@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/navigation_leave"
         android:icon="@drawable/cancel1"
-        android:title="@string/abandonner" />
+        android:title="@string/abandonner"
+        android:fontFamily="sans-serif"/>
 
     <item
         android:id="@+id/navigation_hint"
         android:icon="@drawable/hint"
-        android:title="@string/indice" />
+        android:title="@string/indice"
+        android:fontFamily="sans-serif"/>
 
     <item
         android:id="@+id/navigation_validate"
         android:icon="@drawable/checked1"
-        android:title="@string/soumettre" />
-
+        android:title="@string/soumettre"
+        android:fontFamily="sans-serif"/>
 </menu>

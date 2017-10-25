@@ -1,15 +1,12 @@
 <resources>
     // Activités
     <string name="app_name">The Wild Hunt</string>
-    <string name="title_activity_tab_">Tab_Activity</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_challenges_">Challenges_Activity</string>
     <string name="title_activity_profile_">Profile</string>
 
     // Menu Déroulant
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="drawermenu_title">THE WILD HUNT</string>
     <string name="nav_lobby">Rejoindre une partie</string>
     <string name="nav_rules">Règles du jeu</string>
     <string name="nav_create">Créer ma partie</string>
@@ -18,36 +15,35 @@
     <string name="share">Partager</string>
     <string name="nav_credits">Crédits</string>
     <string name="nav_delete">Deconnexion</string>
-    <string name="share_text">Viens tester la nouvelle application Wild Hunt !</string>
+    <string name="share_text">Viens tester la nouvelle application "The Wild Hunt" !</string>
 
     // Page Profil
     <string name="profil">Profil</string>
-    <string name="upload_ta_photo">UPLOAD\nPHOTO</string>
-    <string name="prendre_nouvelle_photo">NOUVELLE\nPHOTO</string>
+    <string name="upload_ta_photo">GALLERIE\nPHOTO</string>
+    <string name="prendre_nouvelle_photo">APPAREIL\nPHOTO</string>
     <string name="envoi_photo">ENVOI\nPHOTO</string>
     <string name="toast_error_profile">Tu es déjà sur la page Profil</string>
     <string name="toast_error_upload">Echec de l\'upload</string>
     <string name="toast_upload_success">Upload réussi !</string>
     <string name="progressdialog_upload">Uploading ...</string>
     <string name="sauvegarder_les_modifications">Sauvegarder les modifications</string>
-    <string name="vos_donn_es_personnelles">Vos données personnelles :</string>
-    <string name="personnalisez_votre_avatar">Personnalise ton avatar :</string>
-    <string name="scores">Votre score :</string>
+    <string name="vos_donn_es_personnelles">Tes données personnelles : </string>
+    <string name="scores">Ton score : </string>
     <string name="point">Point</string>
     <string name="titre">Titre</string>
     <string name="touriste">Touriste</string>
     <string name="voyageur">Voyageur</string>
     <string name="conquerant">Conquérant</string>
     <string name="dominateur">Dominateur du monde</string>
-    <string name="votre_pseudo">Votre pseudo :</string>
-    <string name="vous_avez_atteint_le_grade_de">Vous avez atteint le grade de :</string>
-    <string name="d_fi_en_cours">Défi en cours :</string>
-    <string name="partie_en_cours">Partie en cours :</string>
+    <string name="votre_pseudo">Ton pseudo :</string>
+    <string name="vous_avez_atteint_le_grade_de">Tu as atteint le grade de : </string>
+    <string name="d_fi_en_cours">Défi en cours : </string>
+    <string name="partie_en_cours">Partie en cours : </string>
 
     // Page Profil PopUp
     <string name="valider">Valider et continuer</string>
-    <string name="choisir_depuis_nla_gallerie">Upload\nphoto</string>
-    <string name="nouvelle_photo">Nouvelle\nPhoto</string>
+    <string name="choisir_depuis_nla_gallerie">GALLERIE\nPHOTO</string>
+    <string name="nouvelle_photo">APPAREIL\nPHOTO</string>
 
     // Page Défi
     <string name="challenge_creation">Création de défis</string>
@@ -56,28 +52,26 @@
         <item>Normal</item>
         <item>Dur</item>
     </string-array>
-    <string name="hint_name">Ajoute ici un indice pour aider \nle joueur à résoudre le défi</string>
+    <string name="hint_name">Ajoute ici un indice pour aider \nle joueur à résoudre ce défi</string>
     <string name="challenge_name">Nom du défi : </string>
-    <string name="hint_challenge_name">Ajoute ici le nom de ton défi</string>
+    <string name="hint_challenge_name">Ajoute ici le nom de ce défi</string>
     <string name="difficulty">Choisis ta difficulté :</string>
-    <string name="hint">Ecrivez ici votre indice</string>
+    <string name="hint">Ecris ici ton indice</string>
     <string name="create_challenge">Créer le défi</string>
     <string name="toast_challenge">Merci de remplir tous les champs et de choisir une photo</string>
-    <string name="created">Creation du défi réussi!</string>
+    <string name="created">Creation du défi réussie !</string>
 
     // Page Salon
     <string name="title_home">Rejoindre une partie</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="lobby_create_party">Créer ta propre Partie</string>
-    <string name="lobby_list_party">Liste des Parties</string>
+    <string name="lobby_create_party">Créer ta propre partie</string>
+    <string name="lobby_list_party">Liste des parties</string>
     <string name="lobby_join_party">Rejoindre cette partie</string>
-    <string name="discover_party">Découvrir Partie</string>
-    <string name="toast_error_party">Vous ne pouvez pas rejoindre votre propre partie\nMerci d\'en selectionner une autre</string>
-    <string name="impossible_lobby">Impossible de rejoindre votre propre partie</string>
+    <string name="discover_party">Découvrir partie</string>
+    <string name="toast_error_party">Tu ne peux pas rejoindre ta propre partie\nMerci d\'en selectionner une autre</string>
+    <string name="impossible_lobby">Impossible de rejoindre ta propre partie</string>
 
     // Page Gestion de Partie
-    <string name="home_ngame_master">GESTION DE PARTIE</string>
+    <string name="home_ngame_master">Gestion de partie</string>
     <string-array name="life_duration">
         <item>Courte (3 jours)</item>
         <item>Moyenne (5 jours)</item>
@@ -88,17 +82,17 @@
 
     // Page Ma Partie
     <string name="title_player">Ma partie</string>
-    <string name="hint_quest_name">Ajoutez ici le nom\nde votre partie</string>
-    <string name="hint_quest_description">Décrivez ici votre partie\n(200 caractères max)</string>
+    <string name="quest_title">Nom de partie : </string>
+    <string name="hint_quest_name">Ajoute ici le nom\nde ta partie</string>
+    <string name="hint_quest_description">Décris ici ta partie\n(200 caractères max)</string>
     <string name="send_photo">Envoyer</string>
-    <string name="error_noquest">Veuillez rejoindre d\'abord une partie</string>
-    <string name="titlePopUp">Envoyer votre solution (Selfie !)</string>
-    <string name="hint_no_need">Votre indice a été utilisé !</string>
-    <string name="hint_need">Trouve cette photo !\nEnvoie nous ton selfie au plus vite\npour gagner ce défi !\n
+    <string name="error_noquest">Rejoins d\'abord une partie</string>
+    <string name="titlePopUp">Envoie ta solution (Selfie !)</string>
+    <string name="hint_no_need">L\'indice a été utilisé !</string>
+    <string name="hint_need">Trouve ce lieu et envoie ton selfie au plus vite\npour gagner ce défi !\n
     N\'oublie pas que tu peux utiliser un indice !</string>
 
     // Page Créer ma partie
-    <string name="quest_title">Nom de partie : </string>
     <string name="description_title">Décris ta partie : </string>
     <string name="life_duration_quest_title">Durée de vie</string>
     <string name="create_quest_button">Créer la partie</string>
@@ -106,7 +100,7 @@
     <string name="create_challenge_button">Créer un défi</string>
     <string name="challenge">Défi :</string>
     <string name="create_quest">Créer ma partie</string>
-    <string name="toast_challenge2">Veuillez remplir tous les champs et ajouter des défis pour pouvoir créer votre partie</string>
+    <string name="toast_challenge2">Tu dois remplir tous les champs et ajouter des défis pour pouvoir créer ta partie</string>
     <string name="toast_createdquest">Partie créée avec succès ! Ajoute des défis maintenant !</string>
     <string name="pas_de_d_fis_pour_l_instant">Pas de défis pour l\'instant</string>
 
@@ -116,15 +110,15 @@
     <string name="soumettre">Soumettre</string>
 
     // Page Défi en cours
-    <string name="warning_hint">Attention, vous perdrez des points ! Re-cliquez pour valider</string>
+    <string name="warning_hint">Attention, tu perdras des points ! Re-clique pour valider</string>
 
     // Page Connexion
     <string name="connexion">Connexion</string>
-    <string name="error_password">Votre pseudo est déjà utilisé ou votre mot de passe est erroné</string>
-    <string name="error_fill">Veuillez remplir tous les champs demandés</string>
+    <string name="error_password">Pseudo déjà utilisé ou mot de passe erroné</string>
+    <string name="error_fill">Tu dois remplir tous les champs demandés</string>
     <string name="created_user">Bienvenue</string>
-    <string name="pseudo">PSEUDO</string>
-    <string name="password">PASSWORD</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="password">Mot de passe</string>
 
     // Page Règles du jeu
     <string name="rules">La 1ère règle du jeu c’est de lire les règles du jeu !\n \n
@@ -133,11 +127,11 @@
     Pour chaque défi, tu consulteras une photo mystérieuse. Ensuite, tu devras retrouver l’endroit où la photo a été prise,
         te prendre en photo sur ce lieu (#selfie !) et l’envoyer via l’appli pour validation !\n \n
     Seul le créateur de la partie  pourra valider ta réponse.\n
-    Tu gagnes des points selon la difficulté de chaque défi.
-    Pour chaque défi un indice est proposé. Si tu réalises le défi sans consulter l’indice tu gagnes la totalité des points.
-        Sinon tu en perd un peu !\n
+    Tu gagneras des points selon la difficulté de chaque défi.
+    Pour chaque défi un indice est proposé. Si tu réalises le défi sans le consulter, tu gagneras la totalité des points.
+        Sinon tu en perdras !\n
     Tu peux choisir n’importe quel défi mais tu ne peux te lancer que dans un seul défi à la fois !\n
-    Tu peux jouer seul ou avec des amis. Le joueur ou l’équipe qui a le plus de points à la fin de la partie est déclaré vainqueur !\n \n
+    Tu peux jouer seul ou avec des amis. Finis le plus de parties pour gagner le plus de points !\n \n
     BONUS : Cette appli te donne la possibilité de créer toi-même tes parties et d’y inviter tes amis.\n \n
     Mais attention, tu ne peux pas créer et jouer sur la même partie 😉\n \n
     A toi de jouer !</string>
@@ -154,30 +148,25 @@
     <string name="nom_du_joueur">Nom du joueur :</string>
     <string name="abandonpartie">Abandonner la partie ?</string>
     <string name="abandondefi">Abandonner le defi ?</string>
-    <string name="toast_error_party2">Vous avez déjà terminé cette partie :)</string>
+    <string name="toast_error_party2">Tu as déjà terminé cette partie !</string>
+    <string name="title_alertdialog_refuse">REFUSER cette solution</string>
+    <string name="alertdialog_refuse">Es-tu sûr de vouloir REFUSER cette solution ?</string>
+    <string name="alertdialog_solutionrefused">Solution refusée !</string>
+    <string name="title_alertdialog_accept">Valider cette solution</string>
+    <string name="alertdialog_accept">Es-tu sûr de vouloir VALIDER cette solution ?</string>
+    <string name="alertdialog_solutionaccepted">Solution validée !</string>
+    <string name="title_alertdialog_abort">Abandonner ?</string>
+    <string name="alertdialog_abort">Es-tu sûr de vouloir abandonner ?</string>
+    <string name="toast_finish">Tu as terminé tous les défis !\n Bravo !</string>
 
     // Page Credits
     <string name="title_credits_rules">Crédits</string>
     <string name="credits">Crédits :\n\n
-    Tous les icones de cette application sont issues de FlatIcon.\n\n
+    Toutes les icones de cette application sont issues de FlatIcon.\n\n
         Copyright : Icons made by Freepik from www.flaticon.com \n\n
         Copyright : Icons from www.flaticon.com \n\n
         Copyright : Jake and the Never Land Pirates\n\n
-        Developed by Pierre , Valentin, Laurent et Guillaume
-        </string>
-
-
-
-
-
-    <string name="title_alertdialog_refuse">REFUSER cette solution</string>
-    <string name="alertdialog_refuse">Es-tu sûr de vouloir REFUSER cette solution ?</string>
-    <string name="alertdialog_solutionrefused">Solution refusée!</string>
-    <string name="title_alertdialog_accept">Valider cette solution</string>
-    <string name="alertdialog_accept">Es-tu sûr de vouloir VALIDER cette solution ?</string>
-    <string name="alertdialog_solutionaccepted">Solution validée !</string>
-    <string name="title_alertdialog_abort">Abandonner?</string>
-    <string name="alertdialog_abort">Es-tu sûr de vouloir abandonner?</string>
-    <string name="toast_finish">Tu as terminé tout les défis !\\n Bravo !</string>
+        Développé par Pierre , Valentin, Laurent et Guillaume
+    </string>
 
 </resources>

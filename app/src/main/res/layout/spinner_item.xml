@@ -9,4 +9,5 @@
     android:textColor="#FFFFFF"
     android:padding="5dip"
     android:background="@color/newcolor2"
+    android:fontFamily="sans-serif"
     />

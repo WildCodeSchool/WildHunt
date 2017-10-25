@@ -24,10 +24,9 @@
     <EditText
         style="@style/Connexion"
         android:id="@+id/connexionUserName"
-        android:textColorHint="@color/newcolor"
-        android:textColor="@color/newcolor"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:maxLength="15"
         android:hint="@string/pseudo"
         android:inputType="text"
@@ -39,11 +38,10 @@
     <EditText
         style="@style/Connexion"
         android:id="@+id/connexionUserPassword"
-        android:textColorHint="@color/newcolor"
-        android:textColor="@color/newcolor"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:maxLength="15"
+        android:fontFamily="sans-serif"
         android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintRight_toRightOf="parent"
@@ -66,10 +64,11 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonConnexionSend" />
 
     <Button
-        style="@style/ButtonYellow"
+        style="@style/ButtonStyle"
         android:textColor="#FFFFFF"
         android:id="@+id/buttonConnexionSend"
         android:text="@string/connexion"
+        android:fontFamily="sans-serif"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:layout_constraintRight_toRightOf="parent"

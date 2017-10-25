@@ -218,8 +218,6 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
                     }
                 });
 
-
-
                 if (quest_name.equals(mUser_CreatedQuestName)) {
                     buttonLobbyJoin.setVisibility(View.GONE);
                     textViewLobbyDescription.setText(R.string.impossible_lobby);

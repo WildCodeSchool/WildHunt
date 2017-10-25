@@ -13,13 +13,13 @@
 
     <TextView
         android:id="@+id/listViewLabel"
-        style="@style/MainTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:text="@string/defi"
+        android:fontFamily="sans-serif"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteY="0dp" />
 
@@ -28,6 +28,7 @@
         style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:layout_marginLeft="32dp"
         android:textColor="#FFFFFF"
         app:layout_constraintBaseline_toBaselineOf="@+id/listViewLabel"
@@ -39,6 +40,7 @@
         style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:textColor="#FFFFFF"

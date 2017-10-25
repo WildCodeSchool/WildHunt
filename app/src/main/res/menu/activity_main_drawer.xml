@@ -5,36 +5,44 @@
         <item
             android:id="@+id/nav_rules"
             android:icon="@drawable/book3"
-            android:title="@string/nav_rules" />
+            android:title="@string/nav_rules"
+            android:fontFamily="sans-serif"/>
         <item
             android:id="@+id/nav_play"
             android:icon="@drawable/play3"
-            android:title="@string/nav_play" />
+            android:title="@string/nav_play"
+            android:fontFamily="sans-serif"/>
         <item
             android:id="@+id/nav_lobby"
             android:icon="@drawable/map3"
-            android:title="@string/nav_lobby" />
+            android:title="@string/nav_lobby"
+            android:fontFamily="sans-serif"/>
         <item
             android:id="@+id/nav_create"
             android:icon="@drawable/plus3"
-            android:title="@string/nav_create" />
+            android:title="@string/nav_create"
+            android:fontFamily="sans-serif"/>
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/settings3"
-            android:title="@string/nav_manage" />
+            android:title="@string/nav_manage"
+            android:fontFamily="sans-serif"/>
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/share3"
             android:title="@string/share"
-            android:actionProviderClass="android.widget.ShareActionProvider"/>
+            android:actionProviderClass="android.widget.ShareActionProvider"
+            android:fontFamily="sans-serif"/>
         <item
             android:id="@+id/nav_credits"
             android:icon="@drawable/copyright3"
-            android:title="@string/nav_credits" />
+            android:title="@string/nav_credits"
+            android:fontFamily="sans-serif"/>
         <item
             android:id="@+id/nav_delete"
             android:icon="@drawable/delete3"
-            android:title="@string/nav_delete" />
+            android:title="@string/nav_delete"
+            android:fontFamily="sans-serif"/>
     </group>
 
 </menu>

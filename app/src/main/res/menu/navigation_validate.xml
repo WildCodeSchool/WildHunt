@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/navigation_refuse"
         android:icon="@drawable/cancel1"
-        android:title="@string/refuse" />
+        android:title="@string/refuse"
+        android:fontFamily="sans-serif"/>
 
     <item
         android:id="@+id/navigation_solution"
         android:icon="@drawable/hint"
-        android:title="@string/solution" />
+        android:title="@string/solution"
+        android:fontFamily="sans-serif"/>
 
     <item
         android:id="@+id/navigation_accept"
         android:icon="@drawable/checked1"
-        android:title="@string/accept" />
-
+        android:title="@string/accept"
+        android:fontFamily="sans-serif"/>
 </menu>

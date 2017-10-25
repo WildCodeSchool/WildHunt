@@ -54,8 +54,6 @@ public class PlayerActivity extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
 
-        final TextView textViewPlayerActivityHint = findViewById(R.id.textViewPlayerActivityHint);
-
         // To find User Key and link it to a quest
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mUserId = sharedPreferences.getString("mUserId", mUserId);
@@ -276,24 +274,18 @@ public class PlayerActivity extends AppCompatActivity implements NavigationView.
                                                 .child(mUser_challenge).child("state").setValue("true");
                                         mRefUser.child("user_indice").setValue("false");
                                         startActivity(new Intent(getApplicationContext(), PlayerActivity.class));
-
-
                                     }
                                 })
                                 .setIcon(android.R.drawable.ic_dialog_alert)
                                 .show();
                     }
                 });
-
-
-
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         };
-
         mRefUser.addListenerForSingleValueEvent(mListener);
     }
 
@@ -369,7 +361,6 @@ public class PlayerActivity extends AppCompatActivity implements NavigationView.
                                 for (int h = 0; h < mapChallengesDone.length; h++) {
                                     if (mapChallenges[finalJ].equals(mapChallengesDone[h])) {
                                         final DatabaseReference refUser = FirebaseDatabase.getInstance().getReference();
-                                        //TODO rajouter une boucle ou condition pq ca ajoute les points en continue
                                         // Le défi est bon, on passe au suivant !!
 
                                         // Si le challenge actuel correspond a un challenge done
@@ -441,15 +432,12 @@ public class PlayerActivity extends AppCompatActivity implements NavigationView.
                                         playerActivityDuration.setText(mDiff_challenge);
 
                                         final TextView textViewPlayerActivityHint = findViewById(R.id.textViewPlayerActivityHint);
-                                        final TextView textViewPlayerActivityHint2 = findViewById(R.id.textViewPlayerActivityHint2);
 
                                         // Indice a montrer si indice déja utilisé c'est a dire True dans la bdd
                                         if (mUser_indice.equalsIgnoreCase("true")) {
-                                            textViewPlayerActivityHint.setVisibility(View.VISIBLE);
-                                            textViewPlayerActivityHint2.setText(R.string.hint_no_need);
+
                                         } else {
-                                            textViewPlayerActivityHint.setVisibility(View.GONE);
-                                            textViewPlayerActivityHint2.setText(R.string.hint_need);
+                                            textViewPlayerActivityHint.setText(R.string.hint_need);
                                         }
 
                                         // Indice au clic
@@ -465,8 +453,7 @@ public class PlayerActivity extends AppCompatActivity implements NavigationView.
                                                         isClicked = true;
                                                         Toast.makeText(getApplicationContext(), R.string.warning_hint, Toast.LENGTH_SHORT).show();
                                                     } else if (isClicked) {
-                                                        textViewPlayerActivityHint.setVisibility(View.VISIBLE);
-                                                        textViewPlayerActivityHint2.setVisibility(View.VISIBLE);
+                                                        textViewPlayerActivityHint.setText(mHint_challenge);
 //
                                                         mRefUser.child("user_indice").setValue("true");
                                                         mIndice = "true";

@@ -14,7 +14,8 @@
         android:id="@+id/titlePopUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Envoi ta solution (Selfie)"
+        android:text="@string/titlePopUp"
+        android:fontFamily="sans-serif"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/butLoad"
@@ -23,33 +24,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        style="@style/ButtonBlue"
+        style="@style/ButtonStyle"
         android:id="@+id/butLoad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nouvelle_photo"
+        android:fontFamily="sans-serif"
         app:layout_constraintRight_toLeftOf="@+id/butUpload"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/imageViewSendPhoto"
         app:layout_constraintTop_toBottomOf="@+id/titlePopUp" />
 
     <Button
-        style="@style/ButtonBlue"
+        style="@style/ButtonStyle"
         android:id="@+id/butUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gallerie\nphoto"
+        android:fontFamily="sans-serif"
+        android:text="@string/upload_ta_photo"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/butLoad"
         app:layout_constraintBottom_toTopOf="@+id/imageViewSendPhoto"
         app:layout_constraintTop_toBottomOf="@+id/titlePopUp" />
 
     <Button
-        style="@style/ButtonBlue"
+        style="@style/ButtonStyle"
         android:id="@+id/butSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/valider"
+        android:fontFamily="sans-serif"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

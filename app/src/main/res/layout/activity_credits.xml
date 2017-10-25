@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:fontFamily="casual"
+                    android:fontFamily="sans-serif"
                     android:gravity="center"
                     android:text="@string/title_credits_rules"
                     android:textColor="#FFFFFF"
@@ -78,6 +78,7 @@
                 <TextView
                     android:layout_marginTop="10dp"
                     android:id="@+id/textView"
+                    android:fontFamily="sans-serif"
                     android:paddingLeft="25dp"
                     android:paddingRight="25dp"
                     android:paddingTop="5dp"

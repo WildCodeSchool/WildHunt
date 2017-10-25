@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorBlue">#33495E</color>
-    <color name="colorAppBar">#33495E</color>
     <color name="colorYellow">#FFD05C</color>
-    <color name="colorBlue2">#84DBFF</color>
-    <color name="colorRougeTrans">#DDBBBBBB</color>
-    <color name="colorRougeTrans2">#DD7777</color>
-    <color name="colorJauneTrans">#DDBB</color>
-    <color name="colorJauneTrans2">#DD7</color>
-    <color name="colorBackground">#DFF2FF</color>
     <color name="colorTransparent">#f8ffffff</color>
-    <color name="colorPopUpValidate">#DFF2FF</color>
+    <color name="colorWhite">#FFFFFF</color>
     <color name="newcolor">#3A291A</color>
     <color name="newcolor2">#877565</color>
-    <color name="newcolor3">#C58B58</color>
-
+    <color name="newcolor3">#BAA18B</color>
 </resources>
