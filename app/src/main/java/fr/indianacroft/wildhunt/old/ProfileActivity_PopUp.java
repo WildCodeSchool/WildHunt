@@ -1,4 +1,4 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,12 +20,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
+
+import fr.indianacroft.wildhunt.R;
 
 public class ProfileActivity_PopUp extends AppCompatActivity {
 
@@ -40,7 +41,7 @@ public class ProfileActivity_PopUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile__pop_up);
+        setContentView(R.layout.old_activity_profile__pop_up);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

@@ -1,4 +1,4 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.content.Context;
 
@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+import fr.indianacroft.wildhunt.R;
 
 
 /**

@@ -1,4 +1,4 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,7 +24,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +31,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import fr.indianacroft.wildhunt.R;
 
 public class ChallengeToValidateActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -55,7 +56,7 @@ public class ChallengeToValidateActivity extends AppCompatActivity implements Na
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_challenge_to_validate);
+        setContentView(R.layout.old_activity_challenge_to_validate);
 
         // Pour recuperer la key d'un user (pour le lier a une quête)
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -233,10 +234,7 @@ public class ChallengeToValidateActivity extends AppCompatActivity implements Na
                 // Load the image using Glide
 //                if (storageReference.getDownloadUrl().isSuccessful()){
                 Glide.with(getApplicationContext())
-                        .using(new FirebaseImageLoader())
                         .load(storageReference)
-                        .skipMemoryCache(true)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .into(imagePlayerSolution);
 
 

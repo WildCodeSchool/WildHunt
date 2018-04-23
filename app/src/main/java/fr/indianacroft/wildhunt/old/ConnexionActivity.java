@@ -1,4 +1,4 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,6 +24,8 @@ import java.security.Key;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
+import fr.indianacroft.wildhunt.R;
+
 public class ConnexionActivity extends AppCompatActivity {
 
     final String userName = "NameKey";
@@ -38,7 +40,7 @@ public class ConnexionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_connexion);
+        setContentView(R.layout.old_activity_connexion);
 
         // Notiications en commentaires suite manque de temps
 //        // Start Service

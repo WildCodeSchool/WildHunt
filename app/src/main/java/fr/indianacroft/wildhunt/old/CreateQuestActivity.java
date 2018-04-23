@@ -1,4 +1,4 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,12 +24,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import fr.indianacroft.wildhunt.R;
 
 public class CreateQuestActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -47,7 +48,7 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_quest);
+        setContentView(R.layout.old_activity_create_quest);
 
         // Pour recuperer la key d'un user (pour le lier a une quête)
         final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -262,10 +263,10 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
                     });
 
                     // ListView des challenges crées
-                    ListAdapter adapterChall = new FirebaseListAdapter<Challenge>(
+                    /*ListAdapter adapterChall = new FirebaseListAdapter<Challenge>(
                             CreateQuestActivity.this,
                             Challenge.class,
-                            R.layout.challenge_listview,
+                            R.layout.old_challenge_listview,
                             ref.child("Challenge").child(questCreatedOrNot)) {
                         @Override
                         protected void populateView(View v, Challenge challenge, int position) {
@@ -276,7 +277,7 @@ public class CreateQuestActivity extends AppCompatActivity implements Navigation
                                     .setText(String.valueOf(challenge.getChallenge_difficulty()));
                         }
                     };
-                    listView.setAdapter(adapterChall);
+                    listView.setAdapter(adapterChall);*/
                 }
             }
 

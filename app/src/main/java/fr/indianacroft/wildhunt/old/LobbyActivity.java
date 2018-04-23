@@ -1,4 +1,4 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,12 +25,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import fr.indianacroft.wildhunt.R;
 
 public class LobbyActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -49,7 +50,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lobby);
+        setContentView(R.layout.old_activity_lobby);
 
         // Pour recuperer la key d'un user (pour le lier a une quête)
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -127,9 +128,9 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
         final RecyclerView recyclerViewLobby = findViewById(R.id.recyclerViewHomeJoueurLobby);
         recyclerViewLobby.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Quest");
-        final FirebaseRecyclerAdapter mAdapter = new FirebaseRecyclerAdapter<Quest, LobbyViewHolder>(
+        /*final FirebaseRecyclerAdapter mAdapter = new FirebaseRecyclerAdapter<Quest, LobbyViewHolder>(
                 Quest.class,
-                R.layout.lobby_recyclerview,
+                R.layout.old_lobby_recyclerview,
                 LobbyViewHolder.class,
                 ref) {
             @Override
@@ -140,7 +141,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
         };
         // Set the adapter avec les données et la ligne de separation
         recyclerViewLobby.addItemDecoration(new LobbyActivity.SimpleDividerItemDecoration(this));
-        recyclerViewLobby.setAdapter(mAdapter);
+        recyclerViewLobby.setAdapter(mAdapter);*/
 
         // Bouton pour créer sa party
         Button buttonCreateQuest = findViewById(R.id.buttonLobbyCreateParty);
@@ -242,7 +243,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
                     mNbChallengeLobby.setVisibility(View.VISIBLE);
 
                     // Hide Other Description
-                    for (int i = 0; i < mAdapter.getItemCount(); i++) {
+                    /*for (int i = 0; i < mAdapter.getItemCount(); i++) {
                         if (i != position) {
                             LobbyViewHolder holder = (LobbyViewHolder) recyclerViewLobby.findViewHolderForAdapterPosition(i);
                             if (holder != null) {
@@ -251,7 +252,7 @@ public class LobbyActivity extends AppCompatActivity implements NavigationView.O
                                 holder.mNbChallengeLobby.setVisibility(View.GONE);
                             }
                         }
-                    }
+                    }*/
                 }
             }
         });

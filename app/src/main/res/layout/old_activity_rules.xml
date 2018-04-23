@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="fr.indianacroft.wildhunt.PlayerActivity">
+        tools:context="fr.indianacroft.wildhunt.RulesActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
@@ -32,9 +32,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:background="@color/newcolor"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
-                android:background="@color/newcolor">
+                app:popupTheme="@style/AppTheme.PopupOverlay">
 
                 <TextView
                     android:id="@+id/textView16"
@@ -44,7 +44,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif"
                     android:gravity="center"
-                    android:text="@string/title_home"
+                    android:text="@string/title_activity_rules"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -53,46 +53,59 @@
                     android:id="@+id/imageViewAvatar"
                     android:layout_width="66dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/pirate_head"
                     android:layout_gravity="end"
-                    android:padding="5dp"/>
+                    android:padding="5dp"
+                    android:src="@drawable/pirate_head" />
 
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            tools:layout_editor_absoluteY="64dp"
-            tools:layout_editor_absoluteX="0dp">
+            android:orientation="vertical"
+            android:background="@drawable/scroll2"
+            android:paddingTop="70dp"
+            android:paddingRight="34dp"
+            android:paddingLeft="32dp"
+            android:paddingBottom="60dp">
 
-            <Button
-                android:id="@+id/buttonLobbyCreateParty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:fontFamily="sans-serif"
-                android:background="@drawable/button_shape"
-                android:text="@string/lobby_create_party"
-                android:textColor="#FFFFFF"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerViewHomeJoueurLobby" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerViewHomeJoueurLobby"
-                android:layout_width="342dp"
-                android:layout_height="417dp"
-                android:fontFamily="sans-serif"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/buttonLobbyCreateParty"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:textColor="@color/newcolor"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:fontFamily="sans-serif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/rules"
+                    android:gravity="center" />
 
-        </android.support.constraint.ConstraintLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/nav_play"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_shape" />
 
     </LinearLayout>
 
@@ -103,7 +116,7 @@
         app:itemTextColor="@color/newcolor"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
+        app:headerLayout="@layout/old_nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

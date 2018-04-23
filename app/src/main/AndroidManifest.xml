@@ -2,12 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.indianacroft.wildhunt">
 
-    <!--
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/thewildhunticon"
@@ -15,82 +9,81 @@
         android:roundIcon="@drawable/thewildhunticon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service
-            android:name=".NotificationService"
-            android:enabled="true"
-            android:exported="true" />
 
-        <activity
-            android:name=".ConnexionActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- OLD -->
         <activity
-            android:name=".PlayerActivity_PopUp"
+            android:name=".old.ConnexionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".old.PlayerActivity_PopUp"
             android:label="PartyPopUp"
-            android:theme="@style/AppTheme.PopUp"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".ChallengesActivity"
+            android:name=".old.ChallengesActivity"
             android:label="@string/title_activity_challenges_"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".old.ProfileActivity"
             android:label="@string/title_activity_profile_"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".RulesActivity"
+            android:name=".old.RulesActivity"
             android:label="Rules"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PlayerActivity"
+            android:name=".old.PlayerActivity"
             android:label="Play"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ProfileActivity_PopUp"
+            android:name=".old.ProfileActivity_PopUp"
             android:label="ProfilePopUp"
-            android:theme="@style/AppTheme.PopUp"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".LobbyActivity"
+            android:name=".old.LobbyActivity"
             android:label="Lobby"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CreateQuestActivity"
+            android:name=".old.CreateQuestActivity"
             android:label="Create Party"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".ValidateQuestActivity"
+            android:name=".old.ValidateQuestActivity"
             android:label="Validate"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChallengeToValidateActivity"
+            android:name=".old.ChallengeToValidateActivity"
             android:label="Validate"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChallengeToValidateActivity_PopUp"
-            android:theme="@style/AppTheme.PopUp"
-            android:screenOrientation="portrait"/>
+            android:name=".old.ChallengeToValidateActivity_PopUp"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".CreditsActivity"
+            android:name=".old.CreditsActivity"
             android:label="Lobby"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

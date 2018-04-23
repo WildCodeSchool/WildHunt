@@ -1,10 +1,12 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import fr.indianacroft.wildhunt.R;
 
 /**
  * Created by wilder on 16/10/17.

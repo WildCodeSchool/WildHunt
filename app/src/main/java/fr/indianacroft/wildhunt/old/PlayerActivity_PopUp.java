@@ -1,4 +1,4 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,13 +15,11 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -34,7 +32,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
-import java.util.HashMap;
+
+import fr.indianacroft.wildhunt.R;
 
 public class PlayerActivity_PopUp extends AppCompatActivity {
     int PICK_IMAGE_REQUEST = 111;
@@ -60,7 +59,7 @@ public class PlayerActivity_PopUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player_popup);
+        setContentView(R.layout.old_activity_player_popup);
 
         final ImageView imageViewSendPhoto = findViewById(R.id.imageViewSendPhoto);
 
@@ -128,12 +127,12 @@ public class PlayerActivity_PopUp extends AppCompatActivity {
 
                 // Load the image using Glide
 //                if (storageReference.getDownloadUrl().isSuccessful()){
-                    Glide.with(getApplicationContext())
+                    /*Glide.with(getApplicationContext())
                             .using(new FirebaseImageLoader())
                             .load(storageReference)
                             .skipMemoryCache(true)
                             .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .into(imageViewSendPhoto);
+                            .into(imageViewSendPhoto);*/
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

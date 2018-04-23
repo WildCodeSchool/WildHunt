@@ -1,10 +1,12 @@
-package fr.indianacroft.wildhunt;
+package fr.indianacroft.wildhunt.old;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import fr.indianacroft.wildhunt.R;
 
 /**
  * Created by wilder on 11/10/17.
